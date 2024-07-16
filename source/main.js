@@ -118,9 +118,9 @@ Translation.addTranslation("intermedium gemstone", {ru: "§6Интермедиу
 Translation.addTranslation("superium gemstone", {ru: "§bСупериумный самоцвет"}, {en: "§bsuperium gemstone"});
 Translation.addTranslation("supremium gemstone", {ru: "§cСупремиумный самоцвет"}, {en: "§csupremium gemstone"});
 Translation.addTranslation("item.agriculture_core.inferium_seeds", {ru: "§eИнфериумные семена"}, {en: "§einferium seeds"});
-Translation.addTranslation("item.agriculture_core.dirt_seeds", {ru: "Семена земли"}, {en: "dirt seeds"});
+Translation.addTranslation("item.agriculture_core.dirt_seeds", {ru: "Семена грязи"}, {en: "dirt seeds"});
 Translation.addTranslation("item.agriculture_core.air_seeds", {ru: "Семена воздуха"}, {en: "air seeds"});
-Translation.addTranslation("item.agriculture_core.earth_seeds", {ru: "Семена Земля"}, {en: "earth seeds"});
+Translation.addTranslation("item.agriculture_core.earth_seeds", {ru: "Семена земли"}, {en: "earth seeds"});
 Translation.addTranslation("item.agriculture_core.netherite_seeds", {ru: "Семена незерита"}, {en: "netherite seeds"});
 Translation.addTranslation("item.agriculture_core.prismarine_seeds", {ru: "Семена призмарина"}, {en: "prismarine seeds"});
 Translation.addTranslation("item.agriculture_core.nature_seeds", {ru: "Семена природы"}, {en: "nature seeds"});
@@ -2413,7 +2413,7 @@ Item.registerNameOverrideFunction(ItemID.soul_jar, function(stack){
          entityName = typeName;
  }
 
- return Translation.translate("soul_jar") + (entityName ? ("\n§7"+Translation.translate("contains_soul") + ": " +Translation.translate(entityName) + " " + stack.data + " / 4") : "\n§7" + Translation.translate("empty_jar"));
+ return Translation.translate("soul_jar") + (entityName ? ("\n§7"+Translation.translate("contains_soul") + ": " +Translation.translate(entityName) + " " + stack.data + " / 4") : "\n§7" + Translation.translate("empty"));
 });
 
 for(let i in entityEssence){
