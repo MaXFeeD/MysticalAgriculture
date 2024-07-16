@@ -1,0 +1,10 @@
+Recipes.addFurnace(BlockID.inferium_ore, ItemID.inferium_essence, 0);
+Recipes.addFurnace(BlockID.nether_inferium_ore, ItemID.inferium_essence, 0);
+Recipes.addFurnace(BlockID.end_inferium_ore, ItemID.inferium_essence, 0);
+Recipes.addFurnace(BlockID.prosperity_ore, ItemID.prosperity_shard, 0);
+Recipes.addFurnace(BlockID.nether_prosperity_ore, ItemID.prosperity_shard, 0);
+Recipes.addFurnace(BlockID.end_prosperity_ore, ItemID.prosperity_shard, 0);
+Recipes.addFurnace(BlockID.soulium_ore, ItemID.soulium_dust, 0);
+Recipes.addFurnace(BlockID.soulstone_cobble, BlockID.soulstone, 0);
+Recipes.addFurnace(BlockID.soulstone, BlockID.soulstone_smooth, 0);
+Recipes.addFurnace(BlockID.soulstone_smooth, ItemID.soul_dust, 0);

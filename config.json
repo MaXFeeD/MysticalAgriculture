@@ -1,0 +1,7 @@
+{
+    "enable":true,
+    "debug":true,
+    "world_gen": {
+    "soulstone": 48
+    }
+}
