@@ -1,4 +1,4 @@
-Item.addCreativeGroup("ores", Translation.translate("Руды"), [
+Item.addCreativeGroup("ores", Translation.translate("ores"), [
     BlockID.inferium_ore,
     BlockID.prosperity_ore,
     BlockID.nether_inferium_ore,
@@ -8,7 +8,7 @@ Item.addCreativeGroup("ores", Translation.translate("Руды"), [
     BlockID.end_prosperity_ore
 ]);
 
-Item.addCreativeGroup("blocks", Translation.translate("Блоки"), [
+Item.addCreativeGroup("blocks", Translation.translate("blocks"), [
     BlockID.inferium_block,
     BlockID.prosperity_block,
     BlockID.prudentium_block,
@@ -37,10 +37,13 @@ Item.addCreativeGroup("blocks", Translation.translate("Блоки"), [
     BlockID.soulstone_cracked_bricks,
     BlockID.soulstone_chiseled_bricks,
     BlockID.soulstone_smooth,
-    BlockID.soulstone_smooth_slab_side
+    BlockID.soulstone_smooth_slab_side,
+    BlockID.witherproof_block,
+    BlockID.witherproof_bricks,
+    BlockID.witherproof_glass
 ]);
 
-Item.addCreativeGroup("essence", Translation.translate("Эссенция"),  [
+Item.addCreativeGroup("essence", Translation.translate("essence"),  [
     ItemID.inferium_essence,
     ItemID.prudentium_essence,
     ItemID.intermedium_essence,
@@ -48,7 +51,7 @@ Item.addCreativeGroup("essence", Translation.translate("Эссенция"),  [
     ItemID.supremium_essence
 ]);
 
-Item.addCreativeGroup("essenc", Translation.translate("Эссенции"),  [
+Item.addCreativeGroup("essenc", Translation.translate("essenc"),  [
     ItemID.dirt_essence,
     ItemID.air_essence,
     ItemID.earth_essence,
@@ -97,7 +100,7 @@ Item.addCreativeGroup("essenc", Translation.translate("Эссенции"),  [
     ItemID.squid_essence  
 ]);
 
-Item.addCreativeGroup("items", Translation.translate("Предметы"),  [
+Item.addCreativeGroup("items", Translation.translate("items"),  [
     ItemID.prosperity_shard,
     ItemID.infusion_crystal,
     ItemID.master_infusion_crystal,
@@ -113,7 +116,7 @@ Item.addCreativeGroup("items", Translation.translate("Предметы"),  [
     ItemID.blank_skull
 ]);
 
-Item.addCreativeGroup("ingot", Translation.translate("Слитки"),  [
+Item.addCreativeGroup("ingot", Translation.translate("ingot"),  [
     ItemID.prosperity_ingot,
     ItemID.inferium_ingot,
     ItemID.soulium_ingot,
@@ -124,7 +127,7 @@ Item.addCreativeGroup("ingot", Translation.translate("Слитки"),  [
 ]);   
 
 
-Item.addCreativeGroup("gems", Translation.translate("Самоцветы"),  [
+Item.addCreativeGroup("gems", Translation.translate("gemstone"),  [
     ItemID.prosperity_gemstone,
     ItemID.inferium_gemstone,
     ItemID.soulium_gemstone,
@@ -134,7 +137,7 @@ Item.addCreativeGroup("gems", Translation.translate("Самоцветы"),  [
     ItemID.supremium_gemstone
 ]);   
 
-Item.addCreativeGroup("nuggets", Translation.translate("Самородки"),  [
+Item.addCreativeGroup("nuggets", Translation.translate("nuggets"),  [
     ItemID.prosperity_nugget,
     ItemID.inferium_nugget,
     ItemID.soulium_nugget,
@@ -144,7 +147,7 @@ Item.addCreativeGroup("nuggets", Translation.translate("Самородки"),  [
     ItemID.supremium_nugget
 ]);  
 
- Item.addCreativeGroup("sword", Translation.translate("Мечи"),  [
+ Item.addCreativeGroup("sword", Translation.translate("sword"),  [
     ItemID.inferium_sword,
     ItemID.prudentium_sword,
     ItemID.intermedium_sword,
@@ -152,7 +155,7 @@ Item.addCreativeGroup("nuggets", Translation.translate("Самородки"),  [
     ItemID.supremium_sword
 ]);
 
-Item.addCreativeGroup("pickaxe", Translation.translate("Кирки"),  [
+Item.addCreativeGroup("pickaxe", Translation.translate("pickaxe"),  [
     ItemID.inferium_pickaxe,
     ItemID.prudentium_pickaxe,
     ItemID.intermedium_pickaxe,
@@ -160,7 +163,7 @@ Item.addCreativeGroup("pickaxe", Translation.translate("Кирки"),  [
     ItemID.supremium_pickaxe
 ]);
 
-Item.addCreativeGroup("axe", Translation.translate("Топоры"),  [
+Item.addCreativeGroup("axe", Translation.translate("axe"),  [
     ItemID.inferium_axe,
     ItemID.prudentium_axe,
     ItemID.intermedium_axe,
@@ -168,7 +171,7 @@ Item.addCreativeGroup("axe", Translation.translate("Топоры"),  [
     ItemID.supremium_axe
 ]);
 
-Item.addCreativeGroup("shovel", Translation.translate("Лопаты"),  [
+Item.addCreativeGroup("shovel", Translation.translate("shovel"),  [
     ItemID.inferium_shovel,
     ItemID.prudentium_shovel,
     ItemID.intermedium_shovel,
@@ -176,7 +179,7 @@ Item.addCreativeGroup("shovel", Translation.translate("Лопаты"),  [
     ItemID.supremium_shovel
 ]);
 
-Item.addCreativeGroup("hoe", Translation.translate("Мотыги"),  [
+Item.addCreativeGroup("hoe", Translation.translate("hoe"),  [
     ItemID.inferium_hoe,
     ItemID.prudentium_hoe,
     ItemID.intermedium_hoe,
@@ -184,7 +187,7 @@ Item.addCreativeGroup("hoe", Translation.translate("Мотыги"),  [
     ItemID.supremium_hoe
 ]);
 
-Item.addCreativeGroup("helmet", Translation.translate("Шляпы"),  [
+Item.addCreativeGroup("helmet", Translation.translate("helmet"),  [
     ItemID.inferium_helmet,
     ItemID.prudentium_helmet,
     ItemID.intermedium_helmet,
@@ -192,7 +195,7 @@ Item.addCreativeGroup("helmet", Translation.translate("Шляпы"),  [
     ItemID.supremium_helmet
 ]);
 
-Item.addCreativeGroup("chestplate", Translation.translate("Футболки"),  [
+Item.addCreativeGroup("chestplate", Translation.translate("chestplate"),  [
     ItemID.inferium_chestplate,
     ItemID.prudentium_chestplate,
     ItemID.intermedium_chestplate,
@@ -200,7 +203,7 @@ Item.addCreativeGroup("chestplate", Translation.translate("Футболки"),  
     ItemID.supremium_chestplate
 ]);
 
-Item.addCreativeGroup("leggings", Translation.translate("Шорты"),  [
+Item.addCreativeGroup("leggings", Translation.translate("leggings"),  [
     ItemID.inferium_leggings,
     ItemID.prudentium_leggings,
     ItemID.intermedium_leggings,
@@ -208,7 +211,7 @@ Item.addCreativeGroup("leggings", Translation.translate("Шорты"),  [
     ItemID.supremium_leggings
 ]);
 
-Item.addCreativeGroup("boots", Translation.translate("Бархатные тяги"),  [
+Item.addCreativeGroup("boots", Translation.translate("boots"),  [
     ItemID.inferium_boots,
     ItemID.prudentium_boots,
     ItemID.intermedium_boots,
@@ -216,7 +219,7 @@ Item.addCreativeGroup("boots", Translation.translate("Бархатные тяг�
     ItemID.supremium_boots
 ]);
 
-Item.addCreativeGroup("agglomeratio", Translation.translate("Сгустки"),  [
+Item.addCreativeGroup("agglomeratio", Translation.translate("agglomeratio"),  [
     ItemID.nature_agglomeratio,
     ItemID.end_agglomeratio,
     ItemID.nether_agglomeratio,

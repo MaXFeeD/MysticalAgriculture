@@ -52,4 +52,3 @@ armToolRecipe(ItemID.supremium_helmet, ItemID.superium_helmet, ItemID.supremium_
 armToolRecipe(ItemID.supremium_chestplate, ItemID.superium_chestplate, ItemID.supremium_gemstone, ItemID.supremium_ingot)
 armToolRecipe(ItemID.supremium_leggings, ItemID.superium_leggings, ItemID.supremium_gemstone, ItemID.supremium_ingot)
 armToolRecipe(ItemID.supremium_boots, ItemID.superium_boots, ItemID.supremium_gemstone, ItemID.supremium_ingot)
-

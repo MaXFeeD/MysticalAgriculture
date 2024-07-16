@@ -31,62 +31,62 @@ Block.createBlock("supremium_block", [
 IDRegistry.genBlockID("prosperity_ingot_block");
 Block.createBlock("prosperity_ingot_block", [
 	{name: "prosperity ingot block", texture: [["prosperity_ingot_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("inferium_ingot_block");
 Block.createBlock("inferium_ingot_block", [
 	{name: "inferium ingot block", texture: [["inferium_ingot_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("prudentium_ingot_block");
 Block.createBlock("prudentium_ingot_block", [
 	{name: "prudentium ingot block", texture: [["prudentium_ingot_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("intermedium_ingot_block");
 Block.createBlock("intermedium_ingot_block", [
 	{name: "intermedium ingot block", texture: [["intermedium_ingot_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("superium_ingot_block");
 Block.createBlock("superium_ingot_block", [
 	{name: "superium ingot block", texture: [["superium_ingot_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("supremium_ingot_block");
 Block.createBlock("supremium_ingot_block", [
 	{name: "supremium ingot block", texture: [["supremium_ingot_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("prosperity_gemstone_block");
 Block.createBlock("prosperity_gemstone_block", [
 	{name: "prosperity gemstone block", texture: [["prosperity_gemstone_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("inferium_gemstone_block");
 Block.createBlock("inferium_gemstone_block", [
 	{name: "inferium gemstone block", texture: [["inferium_gemstone_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("prudentium_gemstone_block");
 Block.createBlock("prudentium_gemstone_block", [
 	{name: "prudentium gemstone block", texture: [["prudentium_gemstone_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("intermedium_gemstone_block");
 Block.createBlock("intermedium_gemstone_block", [
 	{name: "intermedium gemstone block", texture: [["intermedium_gemstone_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("superium_gemstone_block");
 Block.createBlock("superium_gemstone_block", [
 	{name: "superium gemstone block", texture: [["superium_gemstone_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("supremium_gemstone_block");
 Block.createBlock("supremium_gemstone_block", [
 	{name: "supremium gemstone block", texture: [["supremium_gemstone_block", 0]], inCreative: true}
-]);
+], BLOCK_INGOTXGEMSTONE);
 
 IDRegistry.genBlockID("soulstone");
 Block.createBlock("soulstone", [
@@ -98,10 +98,25 @@ Block.createBlock("soulium_block", [
 	{name: "soulium block", texture: [["soulium_block", 0]], inCreative: true}
 ]);
 
+IDRegistry.genBlockID("witherproof_glass");
+Block.createBlock("witherproof_glass", [
+    {name: "witherproof glass", texture: [["witherproof_glass", 0]], inCreative: true}
+], GLASS_ANTIBOOM);
+
+IDRegistry.genBlockID("witherproof_block");
+Block.createBlock("witherproof_block", [
+    {name: "witherproof block", texture: [["witherproof_block", 0]], inCreative: true}
+], BLOCK_ANTIBOOM);
+
+IDRegistry.genBlockID("witherproof_bricks");
+Block.createBlock("witherproof_bricks", [
+    {name: "witherproof bricks", texture: [["witherproof_bricks", 0]], inCreative: true}
+], BLOCK_ANTIBOOM);
+
 IDRegistry.genBlockID("soul_glass");
 Block.createBlock("soul_glass", [
 	{name: "soul glass", texture: [["soul_glass", 0]], inCreative: true}
-]);
+], BLOCK_GLASS);
 
 IDRegistry.genBlockID("soulium_gemstone_block");
 Block.createBlock("soulium_gemstone_block", [

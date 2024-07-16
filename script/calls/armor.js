@@ -46,3 +46,5 @@ var client = Network.getClientForPlayer(playerUid);
             }
        }
 });
+/*evil= 19, 28, 32, 33, 35, 37, 38, 43, 44
+    peace= 10, 11, 12, 13, 17*/

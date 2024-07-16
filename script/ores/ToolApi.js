@@ -120,4 +120,7 @@ ToolAPI.registerBlockMaterial(BlockID.soulium_gemstone_block, "stone", 2, true);
 ToolAPI.registerBlockMaterial(BlockID.soulstone_bricks, "stone", 2, true);
 ToolAPI.registerBlockMaterial(BlockID.soulium_ingot_block, "stone", 2, true);
 ToolAPI.registerBlockMaterial(BlockID.soul_glass, "stone", 2, true);
+ToolAPI.registerBlockMaterial(BlockID.witherproof_glass, "stone", 2, true);
+ToolAPI.registerBlockMaterial(BlockID.witherproof_block, "stone", 2, true);
+ToolAPI.registerBlockMaterial(BlockID.witherproof_bricks, "stone", 2, true);
 ToolAPI.registerBlockMaterial(BlockID.soulium_block, "stone", 2, true);

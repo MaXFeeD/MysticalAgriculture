@@ -35,7 +35,6 @@ IDRegistry.genItemID("blank_skull");
 Item.createItem("blank_skull", "blank skull", {name: "blank_skull", meta: 0});
 
 
-
 //agglomeratio
 IDRegistry.genItemID("nature_agglomeratio");
 Item.createItem("nature_agglomeratio", "nature agglomeratio", {name: "nature_agglomeratio", meta: 0});

@@ -1,4 +1,3 @@
-
 function seedsRecipe(resultId, essenceId, extraItemId){
 
 Recipes.addShaped({ id: resultId, count: 1, data: 0 }, [
@@ -97,4 +96,3 @@ Recipes.addShaped({ id: ItemID.lapis_seeds, count: 1, data: 0 }, [
     "#b#",
     "a#a"
 ], ["b", ItemID.crafting_seed_base, 0, "#", ItemID.superium_essence, 0, "a", VanillaItemID.dye, 4]);
-

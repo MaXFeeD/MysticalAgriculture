@@ -49,7 +49,7 @@ Item.registerNameOverrideFunction(ItemID.soul_jar, function(stack){
          entityName = typeName;
  }
 
- return Translation.translate("soul_jar") + (entityName ? ("\n§7"+Translation.translate("contains_soul") + ": " +Translation.translate(entityName) + " " + stack.data + " / 4") : "\n§7" + Translation.translate("empty_jar"));
+ return Translation.translate("soul_jar") + (entityName ? ("\n§7"+Translation.translate("contains_soul") + ": " +Translation.translate(entityName) + " " + stack.data + " / 4") : "\n§7" + Translation.translate("empty"));
 });
 
 for(let i in entityEssence){
