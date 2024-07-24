@@ -1,35 +1,31 @@
 Item.addCreativeGroup("ores", translate("Ores"), [
 	BlockID.inferium_ore,
 	BlockID.prosperity_ore,
-	BlockID.nether_inferium_ore,
-	BlockID.nether_prosperity_ore,
-	BlockID.soulium_ore,
-	BlockID.end_inferium_ore,
-	BlockID.end_prosperity_ore
+	BlockID.soulium_ore
 ]);
 
 Item.addCreativeGroup("essence_blocks", translate("Essence Blocks"), [
 	BlockID.inferium_block,
 	BlockID.prosperity_block,
 	BlockID.prudentium_block,
-	BlockID.intermedium_block,
-	BlockID.superium_block,
+	BlockID.tertium_block,
+	BlockID.imperium_block,
 	BlockID.supremium_block,
 	BlockID.soulium_block,
 
 	BlockID.prosperity_ingot_block,
 	BlockID.inferium_ingot_block,
 	BlockID.prudentium_ingot_block,
-	BlockID.intermedium_ingot_block,
-	BlockID.superium_ingot_block,
+	BlockID.tertium_ingot_block,
+	BlockID.imperium_ingot_block,
 	BlockID.supremium_ingot_block,
 	BlockID.soulium_ingot_block,
 
 	BlockID.prosperity_gemstone_block,
 	BlockID.inferium_gemstone_block,
 	BlockID.prudentium_gemstone_block,
-	BlockID.intermedium_gemstone_block,
-	BlockID.superium_gemstone_block,
+	BlockID.tertium_gemstone_block,
+	BlockID.imperium_gemstone_block,
 	BlockID.supremium_gemstone_block,
 	BlockID.soulium_gemstone_block
 ]);
@@ -54,8 +50,8 @@ Item.addCreativeGroup("reprocessor", translate("Seed Reprocessors"), [
 	BlockID.basic_reprocessor,
 	BlockID.inferium_reprocessor,
 	BlockID.prudentium_reprocessor,
-	BlockID.intermedium_reprocessor,
-	BlockID.superium_reprocessor,
+	BlockID.tertium_reprocessor,
+	BlockID.imperium_reprocessor,
 	BlockID.supremium_reprocessor
 ]);
 
@@ -79,8 +75,8 @@ Item.addCreativeGroup("material", translate("Materials"), [
 	ItemID.prosperity_shard,
 	ItemID.inferium_essence,
 	ItemID.prudentium_essence,
-	ItemID.intermedium_essence,
-	ItemID.superium_essence,
+	ItemID.tertium_essence,
+	ItemID.imperium_essence,
 	ItemID.supremium_essence,
 	ItemID.soulium_dust,
 	ItemID.soul_dust,
@@ -159,8 +155,8 @@ Item.addCreativeGroup("ingot", translate("Ingots"), [
 	ItemID.inferium_ingot,
 	ItemID.soulium_ingot,
 	ItemID.prudentium_ingot,
-	ItemID.intermedium_ingot,
-	ItemID.superium_ingot,
+	ItemID.tertium_ingot,
+	ItemID.imperium_ingot,
 	ItemID.supremium_ingot
 ]);
 
@@ -169,8 +165,8 @@ Item.addCreativeGroup("nugget", translate("Nuggets"), [
 	ItemID.inferium_nugget,
 	ItemID.soulium_nugget,
 	ItemID.prudentium_nugget,
-	ItemID.intermedium_nugget,
-	ItemID.superium_nugget,
+	ItemID.tertium_nugget,
+	ItemID.imperium_nugget,
 	ItemID.supremium_nugget
 ]);
 
@@ -179,79 +175,79 @@ Item.addCreativeGroup("gem", translate("Gemstones"), [
 	ItemID.inferium_gemstone,
 	ItemID.soulium_gemstone,
 	ItemID.prudentium_gemstone,
-	ItemID.intermedium_gemstone,
-	ItemID.superium_gemstone,
+	ItemID.tertium_gemstone,
+	ItemID.imperium_gemstone,
 	ItemID.supremium_gemstone
 ]);
 
 Item.addCreativeGroup("sword", translate("Swords"), [
 	ItemID.inferium_sword,
 	ItemID.prudentium_sword,
-	ItemID.intermedium_sword,
-	ItemID.superium_sword,
+	ItemID.tertium_sword,
+	ItemID.imperium_sword,
 	ItemID.supremium_sword
 ]);
 
 Item.addCreativeGroup("pickaxe", translate("Pickaxes"), [
 	ItemID.inferium_pickaxe,
 	ItemID.prudentium_pickaxe,
-	ItemID.intermedium_pickaxe,
-	ItemID.superium_pickaxe,
+	ItemID.tertium_pickaxe,
+	ItemID.imperium_pickaxe,
 	ItemID.supremium_pickaxe
 ]);
 
 Item.addCreativeGroup("axe", translate("Axes"), [
 	ItemID.inferium_axe,
 	ItemID.prudentium_axe,
-	ItemID.intermedium_axe,
-	ItemID.superium_axe,
+	ItemID.tertium_axe,
+	ItemID.imperium_axe,
 	ItemID.supremium_axe
 ]);
 
 Item.addCreativeGroup("shovel", translate("Shovels"), [
 	ItemID.inferium_shovel,
 	ItemID.prudentium_shovel,
-	ItemID.intermedium_shovel,
-	ItemID.superium_shovel,
+	ItemID.tertium_shovel,
+	ItemID.imperium_shovel,
 	ItemID.supremium_shovel
 ]);
 
 Item.addCreativeGroup("hoe", translate("Hoes"), [
 	ItemID.inferium_hoe,
 	ItemID.prudentium_hoe,
-	ItemID.intermedium_hoe,
-	ItemID.superium_hoe,
+	ItemID.tertium_hoe,
+	ItemID.imperium_hoe,
 	ItemID.supremium_hoe
 ]);
 
 Item.addCreativeGroup("helmet", translate("Helmets"), [
 	ItemID.inferium_helmet,
 	ItemID.prudentium_helmet,
-	ItemID.intermedium_helmet,
-	ItemID.superium_helmet,
+	ItemID.tertium_helmet,
+	ItemID.imperium_helmet,
 	ItemID.supremium_helmet
 ]);
 
 Item.addCreativeGroup("chestplate", translate("Chestplates"), [
 	ItemID.inferium_chestplate,
 	ItemID.prudentium_chestplate,
-	ItemID.intermedium_chestplate,
-	ItemID.superium_chestplate,
+	ItemID.tertium_chestplate,
+	ItemID.imperium_chestplate,
 	ItemID.supremium_chestplate
 ]);
 
 Item.addCreativeGroup("leggings", translate("Leggings"), [
 	ItemID.inferium_leggings,
 	ItemID.prudentium_leggings,
-	ItemID.intermedium_leggings,
-	ItemID.superium_leggings,
+	ItemID.tertium_leggings,
+	ItemID.imperium_leggings,
 	ItemID.supremium_leggings
 ]);
 
 Item.addCreativeGroup("boots", translate("Boots"), [
 	ItemID.inferium_boots,
 	ItemID.prudentium_boots,
-	ItemID.intermedium_boots,
-	ItemID.superium_boots,
+	ItemID.tertium_boots,
+	ItemID.imperium_boots,
 	ItemID.supremium_boots
 ]);

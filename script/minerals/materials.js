@@ -17,19 +17,19 @@ Item.createItem("prudentium_essence", "Prudentium Essence", { name: "prudentium_
 MysticalRecipes.addEssenceUpgrade(ItemID.prudentium_essence, ItemID.inferium_essence);
 
 
-IDRegistry.genItemID("intermedium_essence");
-Item.createItem("intermedium_essence", "Tertium Essence", { name: "intermedium_essence", meta: 0 });
-MysticalRecipes.addEssenceUpgrade(ItemID.intermedium_essence, ItemID.prudentium_essence);
+IDRegistry.genItemID("tertium_essence");
+Item.createItem("tertium_essence", "Tertium Essence", { name: "tertium_essence", meta: 0 });
+MysticalRecipes.addEssenceUpgrade(ItemID.tertium_essence, ItemID.prudentium_essence);
 
 
-IDRegistry.genItemID("superium_essence");
-Item.createItem("superium_essence", "Imperium Essence", { name: "superium_essence", meta: 0 });
-MysticalRecipes.addEssenceUpgrade(ItemID.superium_essence, ItemID.intermedium_essence);
+IDRegistry.genItemID("imperium_essence");
+Item.createItem("imperium_essence", "Imperium Essence", { name: "imperium_essence", meta: 0 });
+MysticalRecipes.addEssenceUpgrade(ItemID.imperium_essence, ItemID.tertium_essence);
 
 
 IDRegistry.genItemID("supremium_essence");
 Item.createItem("supremium_essence", "Supremium Essence", { name: "supremium_essence", meta: 0 });
-MysticalRecipes.addEssenceUpgrade(ItemID.supremium_essence, ItemID.superium_essence);
+MysticalRecipes.addEssenceUpgrade(ItemID.supremium_essence, ItemID.imperium_essence);
 
 
 IDRegistry.genItemID("prosperity_ingot");
@@ -62,24 +62,24 @@ Recipes.addShaped({ id: ItemID.prudentium_ingot, count: 1, data: 0 }, [
 ], ["b", ItemID.inferium_ingot, 0, "#", ItemID.prudentium_essence, 0]);
 
 
-IDRegistry.genItemID("intermedium_ingot");
-Item.createItem("intermedium_ingot", "Tertium Ingot", { name: "intermedium_ingot", meta: 0 });
+IDRegistry.genItemID("tertium_ingot");
+Item.createItem("tertium_ingot", "Tertium Ingot", { name: "tertium_ingot", meta: 0 });
 
-Recipes.addShaped({ id: ItemID.intermedium_ingot, count: 1, data: 0 }, [
+Recipes.addShaped({ id: ItemID.tertium_ingot, count: 1, data: 0 }, [
 	" # ",
 	"#b#",
 	" # "
-], ["b", ItemID.prudentium_ingot, 0, "#", ItemID.intermedium_essence, 0]);
+], ["b", ItemID.prudentium_ingot, 0, "#", ItemID.tertium_essence, 0]);
 
 
-IDRegistry.genItemID("superium_ingot");
-Item.createItem("superium_ingot", "Imperium Ingot", { name: "superium_ingot", meta: 0 });
+IDRegistry.genItemID("imperium_ingot");
+Item.createItem("imperium_ingot", "Imperium Ingot", { name: "imperium_ingot", meta: 0 });
 
-Recipes.addShaped({ id: ItemID.superium_ingot, count: 1, data: 0 }, [
+Recipes.addShaped({ id: ItemID.imperium_ingot, count: 1, data: 0 }, [
 	" # ",
 	"#b#",
 	" # "
-], ["b", ItemID.intermedium_ingot, 0, "#", ItemID.superium_essence, 0]);
+], ["b", ItemID.tertium_ingot, 0, "#", ItemID.imperium_essence, 0]);
 
 
 IDRegistry.genItemID("supremium_ingot");
@@ -89,7 +89,7 @@ Recipes.addShaped({ id: ItemID.supremium_ingot, count: 1, data: 0 }, [
 	" # ",
 	"#b#",
 	" # "
-], ["b", ItemID.superium_ingot, 0, "#", ItemID.supremium_essence, 0]);
+], ["b", ItemID.imperium_ingot, 0, "#", ItemID.supremium_essence, 0]);
 
 
 IDRegistry.genItemID("soulium_ingot");
@@ -132,24 +132,24 @@ Recipes.addShaped({ id: ItemID.prudentium_gemstone, count: 1, data: 0 }, [
 ], ["b", ItemID.inferium_gemstone, 0, "#", ItemID.prudentium_essence, 0]);
 
 
-IDRegistry.genItemID("intermedium_gemstone");
-Item.createItem("intermedium_gemstone", "Tertium Gemstone", { name: "intermedium_gemstone", meta: 0 });
+IDRegistry.genItemID("tertium_gemstone");
+Item.createItem("tertium_gemstone", "Tertium Gemstone", { name: "tertium_gemstone", meta: 0 });
 
-Recipes.addShaped({ id: ItemID.intermedium_gemstone, count: 1, data: 0 }, [
+Recipes.addShaped({ id: ItemID.tertium_gemstone, count: 1, data: 0 }, [
     " # ",
     "#b#",
     " # "
-], ["b", ItemID.prudentium_gemstone, 0, "#", ItemID.intermedium_essence, 0]);
+], ["b", ItemID.prudentium_gemstone, 0, "#", ItemID.tertium_essence, 0]);
 
 
-IDRegistry.genItemID("superium_gemstone");
-Item.createItem("superium_gemstone", "Imperium Gemstone", { name: "superium_gemstone", meta: 0 });
+IDRegistry.genItemID("imperium_gemstone");
+Item.createItem("imperium_gemstone", "Imperium Gemstone", { name: "imperium_gemstone", meta: 0 });
 
-Recipes.addShaped({ id: ItemID.superium_gemstone, count: 1, data: 0 }, [
+Recipes.addShaped({ id: ItemID.imperium_gemstone, count: 1, data: 0 }, [
     " # ",
     "#b#",
     " # "
-], ["b", ItemID.intermedium_gemstone, 0, "#", ItemID.superium_essence, 0]);
+], ["b", ItemID.tertium_gemstone, 0, "#", ItemID.imperium_essence, 0]);
 
 
 IDRegistry.genItemID("supremium_gemstone");
@@ -159,7 +159,7 @@ Recipes.addShaped({ id: ItemID.supremium_gemstone, count: 1, data: 0 }, [
     " # ",
     "#b#",
     " # "
-], ["b", ItemID.superium_gemstone, 0, "#", ItemID.supremium_essence, 0]);
+], ["b", ItemID.imperium_gemstone, 0, "#", ItemID.supremium_essence, 0]);
 
 
 IDRegistry.genItemID("soulium_gemstone");
@@ -187,14 +187,14 @@ Item.createItem("prudentium_nugget", "Prudentium Nugget", { name: "prudentium_nu
 MysticalRecipes.addCompressium(ItemID.prudentium_nugget, ItemID.prudentium_ingot);
 
 
-IDRegistry.genItemID("intermedium_nugget");
-Item.createItem("intermedium_nugget", "Tertium Nugget", { name: "intermedium_nugget", meta: 0 });
-MysticalRecipes.addCompressium(ItemID.intermedium_nugget, ItemID.intermedium_ingot);
+IDRegistry.genItemID("tertium_nugget");
+Item.createItem("tertium_nugget", "Tertium Nugget", { name: "tertium_nugget", meta: 0 });
+MysticalRecipes.addCompressium(ItemID.tertium_nugget, ItemID.tertium_ingot);
 
 
-IDRegistry.genItemID("superium_nugget");
-Item.createItem("superium_nugget", "Imperium Nugget", { name: "superium_nugget", meta: 0 });
-MysticalRecipes.addCompressium(ItemID.superium_nugget, ItemID.superium_ingot);
+IDRegistry.genItemID("imperium_nugget");
+Item.createItem("imperium_nugget", "Imperium Nugget", { name: "imperium_nugget", meta: 0 });
+MysticalRecipes.addCompressium(ItemID.imperium_nugget, ItemID.imperium_ingot);
 
 
 IDRegistry.genItemID("supremium_nugget");

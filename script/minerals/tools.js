@@ -54,60 +54,60 @@ ToolAPI.setTool(ItemID.prudentium_hoe, "prudentium", ToolType.hoe);
 MysticalRecipes.addGemstoneUpgrade(ItemID.prudentium_hoe, ItemID.inferium_hoe, ItemID.prudentium_gemstone, ItemID.prudentium_ingot);
 
 
-ToolAPI.addToolMaterial("intermedium", { durability: 4000, level: 4, efficiency: 15, damage: 10, enchantability: 14 });
+ToolAPI.addToolMaterial("tertium", { durability: 4000, level: 4, efficiency: 15, damage: 10, enchantability: 14 });
 
-IDRegistry.genItemID("intermedium_sword");
-Item.createItem("intermedium_sword", "Tertium Sword", { name: "intermedium_sword", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.intermedium_sword, "intermedium", ToolType.sword);
-MysticalRecipes.addGemstoneUpgrade(ItemID.intermedium_sword, ItemID.prudentium_sword, ItemID.intermedium_gemstone, ItemID.intermedium_ingot);
+IDRegistry.genItemID("tertium_sword");
+Item.createItem("tertium_sword", "Tertium Sword", { name: "tertium_sword", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.tertium_sword, "tertium", ToolType.sword);
+MysticalRecipes.addGemstoneUpgrade(ItemID.tertium_sword, ItemID.prudentium_sword, ItemID.tertium_gemstone, ItemID.tertium_ingot);
 
-IDRegistry.genItemID("intermedium_pickaxe");
-Item.createItem("intermedium_pickaxe", "Tertium Pickaxe", { name: "intermedium_pickaxe", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.intermedium_pickaxe, "intermedium", ToolType.pickaxe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.intermedium_pickaxe, ItemID.prudentium_pickaxe, ItemID.intermedium_gemstone, ItemID.intermedium_ingot);
+IDRegistry.genItemID("tertium_pickaxe");
+Item.createItem("tertium_pickaxe", "Tertium Pickaxe", { name: "tertium_pickaxe", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.tertium_pickaxe, "tertium", ToolType.pickaxe);
+MysticalRecipes.addGemstoneUpgrade(ItemID.tertium_pickaxe, ItemID.prudentium_pickaxe, ItemID.tertium_gemstone, ItemID.tertium_ingot);
 
-IDRegistry.genItemID("intermedium_axe");
-Item.createItem("intermedium_axe", "Tertium Axe", { name: "intermedium_axe", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.intermedium_axe, "intermedium", ToolType.axe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.intermedium_axe, ItemID.prudentium_axe, ItemID.intermedium_gemstone, ItemID.intermedium_ingot);
+IDRegistry.genItemID("tertium_axe");
+Item.createItem("tertium_axe", "Tertium Axe", { name: "tertium_axe", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.tertium_axe, "tertium", ToolType.axe);
+MysticalRecipes.addGemstoneUpgrade(ItemID.tertium_axe, ItemID.prudentium_axe, ItemID.tertium_gemstone, ItemID.tertium_ingot);
 
-IDRegistry.genItemID("intermedium_shovel");
-Item.createItem("intermedium_shovel", "Tertium Shovel", { name: "intermedium_shovel", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.intermedium_shovel, "intermedium", ToolType.shovel);
-MysticalRecipes.addGemstoneUpgrade(ItemID.intermedium_shovel, ItemID.prudentium_shovel, ItemID.intermedium_gemstone, ItemID.intermedium_ingot);
+IDRegistry.genItemID("tertium_shovel");
+Item.createItem("tertium_shovel", "Tertium Shovel", { name: "tertium_shovel", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.tertium_shovel, "tertium", ToolType.shovel);
+MysticalRecipes.addGemstoneUpgrade(ItemID.tertium_shovel, ItemID.prudentium_shovel, ItemID.tertium_gemstone, ItemID.tertium_ingot);
 
-IDRegistry.genItemID("intermedium_hoe");
-Item.createItem("intermedium_hoe", "Tertium Hoe", { name: "intermedium_hoe", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.intermedium_hoe, "intermedium", ToolType.hoe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.intermedium_hoe, ItemID.prudentium_hoe, ItemID.intermedium_gemstone, ItemID.intermedium_ingot);
+IDRegistry.genItemID("tertium_hoe");
+Item.createItem("tertium_hoe", "Tertium Hoe", { name: "tertium_hoe", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.tertium_hoe, "tertium", ToolType.hoe);
+MysticalRecipes.addGemstoneUpgrade(ItemID.tertium_hoe, ItemID.prudentium_hoe, ItemID.tertium_gemstone, ItemID.tertium_ingot);
 
 
-ToolAPI.addToolMaterial("superium", { durability: 6000, level: 4, efficiency: 20, damage: 14, enchantability: 14 });
+ToolAPI.addToolMaterial("imperium", { durability: 6000, level: 4, efficiency: 20, damage: 14, enchantability: 14 });
 
-IDRegistry.genItemID("superium_sword");
-Item.createItem("superium_sword", "Imperium Sword", { name: "superium_sword", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.superium_sword, "superium", ToolType.sword);
-MysticalRecipes.addGemstoneUpgrade(ItemID.superium_sword, ItemID.intermedium_sword, ItemID.superium_gemstone, ItemID.superium_ingot);
+IDRegistry.genItemID("imperium_sword");
+Item.createItem("imperium_sword", "Imperium Sword", { name: "imperium_sword", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.imperium_sword, "imperium", ToolType.sword);
+MysticalRecipes.addGemstoneUpgrade(ItemID.imperium_sword, ItemID.tertium_sword, ItemID.imperium_gemstone, ItemID.imperium_ingot);
 
-IDRegistry.genItemID("superium_pickaxe");
-Item.createItem("superium_pickaxe", "Imperium Pickaxe", { name: "superium_pickaxe", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.superium_pickaxe, "superium", ToolType.pickaxe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.superium_pickaxe, ItemID.intermedium_pickaxe, ItemID.superium_gemstone, ItemID.superium_ingot);
+IDRegistry.genItemID("imperium_pickaxe");
+Item.createItem("imperium_pickaxe", "Imperium Pickaxe", { name: "imperium_pickaxe", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.imperium_pickaxe, "imperium", ToolType.pickaxe);
+MysticalRecipes.addGemstoneUpgrade(ItemID.imperium_pickaxe, ItemID.tertium_pickaxe, ItemID.imperium_gemstone, ItemID.imperium_ingot);
 
-IDRegistry.genItemID("superium_axe");
-Item.createItem("superium_axe", "Imperium Axe", { name: "superium_axe", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.superium_axe, "superium", ToolType.axe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.superium_axe, ItemID.intermedium_axe, ItemID.superium_gemstone, ItemID.superium_ingot);
+IDRegistry.genItemID("imperium_axe");
+Item.createItem("imperium_axe", "Imperium Axe", { name: "imperium_axe", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.imperium_axe, "imperium", ToolType.axe);
+MysticalRecipes.addGemstoneUpgrade(ItemID.imperium_axe, ItemID.tertium_axe, ItemID.imperium_gemstone, ItemID.imperium_ingot);
 
-IDRegistry.genItemID("superium_shovel");
-Item.createItem("superium_shovel", "Imperium Shovel", { name: "superium_shovel", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.superium_shovel, "superium", ToolType.shovel);
-MysticalRecipes.addGemstoneUpgrade(ItemID.superium_shovel, ItemID.intermedium_shovel, ItemID.superium_gemstone, ItemID.superium_ingot);
+IDRegistry.genItemID("imperium_shovel");
+Item.createItem("imperium_shovel", "Imperium Shovel", { name: "imperium_shovel", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.imperium_shovel, "imperium", ToolType.shovel);
+MysticalRecipes.addGemstoneUpgrade(ItemID.imperium_shovel, ItemID.tertium_shovel, ItemID.imperium_gemstone, ItemID.imperium_ingot);
 
-IDRegistry.genItemID("superium_hoe");
-Item.createItem("superium_hoe", "Imperium Hoe", { name: "superium_hoe", meta: 0 }, { stack: 1 });
-ToolAPI.setTool(ItemID.superium_hoe, "superium", ToolType.hoe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.superium_hoe, ItemID.intermedium_hoe, ItemID.superium_gemstone, ItemID.superium_ingot);
+IDRegistry.genItemID("imperium_hoe");
+Item.createItem("imperium_hoe", "Imperium Hoe", { name: "imperium_hoe", meta: 0 }, { stack: 1 });
+ToolAPI.setTool(ItemID.imperium_hoe, "imperium", ToolType.hoe);
+MysticalRecipes.addGemstoneUpgrade(ItemID.imperium_hoe, ItemID.tertium_hoe, ItemID.imperium_gemstone, ItemID.imperium_ingot);
 
 
 ToolAPI.addToolMaterial("supremium", { durability: 99999999, level: 4, efficiency: 32, damage: 21, enchantability: 30 });
@@ -115,24 +115,24 @@ ToolAPI.addToolMaterial("supremium", { durability: 99999999, level: 4, efficienc
 IDRegistry.genItemID("supremium_sword");
 Item.createItem("supremium_sword", "Supremium Sword", { name: "supremium_sword", meta: 0 }, { stack: 1 });
 ToolAPI.setTool(ItemID.supremium_sword, "supremium", ToolType.sword);
-MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_sword, ItemID.superium_sword, ItemID.supremium_gemstone, ItemID.supremium_ingot);
+MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_sword, ItemID.imperium_sword, ItemID.supremium_gemstone, ItemID.supremium_ingot);
 
 IDRegistry.genItemID("supremium_pickaxe");
 Item.createItem("supremium_pickaxe", "Supremium Pickaxe", { name: "supremium_pickaxe", meta: 0 }, { stack: 1 });
 ToolAPI.setTool(ItemID.supremium_pickaxe, "supremium", ToolType.pickaxe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_pickaxe, ItemID.superium_pickaxe, ItemID.supremium_gemstone, ItemID.supremium_ingot);
+MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_pickaxe, ItemID.imperium_pickaxe, ItemID.supremium_gemstone, ItemID.supremium_ingot);
 
 IDRegistry.genItemID("supremium_axe");
 Item.createItem("supremium_axe", "Supremium Axe", { name: "supremium_axe", meta: 0 }, { stack: 1 });
 ToolAPI.setTool(ItemID.supremium_axe, "supremium", ToolType.axe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_axe, ItemID.superium_axe, ItemID.supremium_gemstone, ItemID.supremium_ingot);
+MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_axe, ItemID.imperium_axe, ItemID.supremium_gemstone, ItemID.supremium_ingot);
 
 IDRegistry.genItemID("supremium_shovel");
 Item.createItem("supremium_shovel", "Supremium Shovel", { name: "supremium_shovel", meta: 0 }, { stack: 1 });
 ToolAPI.setTool(ItemID.supremium_shovel, "supremium", ToolType.shovel);
-MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_shovel, ItemID.superium_shovel, ItemID.supremium_gemstone, ItemID.supremium_ingot);
+MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_shovel, ItemID.imperium_shovel, ItemID.supremium_gemstone, ItemID.supremium_ingot);
 
 IDRegistry.genItemID("supremium_hoe");
 Item.createItem("supremium_hoe", "Supremium Hoe", { name: "supremium_hoe", meta: 0 }, { stack: 1 });
 ToolAPI.setTool(ItemID.supremium_hoe, "supremium", ToolType.hoe);
-MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_hoe, ItemID.superium_hoe, ItemID.supremium_gemstone, ItemID.supremium_ingot);
+MysticalRecipes.addGemstoneUpgrade(ItemID.supremium_hoe, ItemID.imperium_hoe, ItemID.supremium_gemstone, ItemID.supremium_ingot);

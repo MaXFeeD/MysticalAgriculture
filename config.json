@@ -3,5 +3,8 @@
 	"debug": true,
 	"world_gen": {
 		"soulstone": 48
+	},
+	"translation": {
+		"russian_uim": false
 	}
 }

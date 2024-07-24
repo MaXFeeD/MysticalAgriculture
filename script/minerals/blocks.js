@@ -19,19 +19,19 @@ Block.createBlock("prudentium_block", [
 MysticalRecipes.addCompressium(ItemID.prudentium_essence, BlockID.prudentium_block);
 ToolAPI.registerBlockMaterial(BlockID.prudentium_block, "stone", 2, true);
 
-IDRegistry.genBlockID("intermedium_block");
-Block.createBlock("intermedium_block", [
-	{ name: "Tertium Block", texture: [["intermedium_block", 0]], inCreative: true }
+IDRegistry.genBlockID("tertium_block");
+Block.createBlock("tertium_block", [
+	{ name: "Tertium Block", texture: [["tertium_block", 0]], inCreative: true }
 ]);
-MysticalRecipes.addCompressium(ItemID.intermedium_essence, BlockID.intermedium_block);
-ToolAPI.registerBlockMaterial(BlockID.intermedium_block, "stone", 2, true);
+MysticalRecipes.addCompressium(ItemID.tertium_essence, BlockID.tertium_block);
+ToolAPI.registerBlockMaterial(BlockID.tertium_block, "stone", 2, true);
 
-IDRegistry.genBlockID("superium_block");
-Block.createBlock("superium_block", [
-	{ name: "Imperium Block", texture: [["superium_block", 0]], inCreative: true }
+IDRegistry.genBlockID("imperium_block");
+Block.createBlock("imperium_block", [
+	{ name: "Imperium Block", texture: [["imperium_block", 0]], inCreative: true }
 ]);
-MysticalRecipes.addCompressium(ItemID.superium_essence, BlockID.superium_block);
-ToolAPI.registerBlockMaterial(BlockID.superium_block, "stone", 2, true);
+MysticalRecipes.addCompressium(ItemID.imperium_essence, BlockID.imperium_block);
+ToolAPI.registerBlockMaterial(BlockID.imperium_block, "stone", 2, true);
 
 IDRegistry.genBlockID("supremium_block");
 Block.createBlock("supremium_block", [
@@ -68,19 +68,19 @@ Block.createBlock("prudentium_ingot_block", [
 MysticalRecipes.addCompressium(ItemID.prudentium_ingot, BlockID.prudentium_ingot_block);
 ToolAPI.registerBlockMaterial(BlockID.prudentium_ingot_block, "stone", 2, true);
 
-IDRegistry.genBlockID("intermedium_ingot_block");
-Block.createBlock("intermedium_ingot_block", [
-	{ name: "Tertium Ingot Block", texture: [["intermedium_ingot_block", 0]], inCreative: true }
+IDRegistry.genBlockID("tertium_ingot_block");
+Block.createBlock("tertium_ingot_block", [
+	{ name: "Tertium Ingot Block", texture: [["tertium_ingot_block", 0]], inCreative: true }
 ], BLOCK_INGOTXGEMSTONE);
-MysticalRecipes.addCompressium(ItemID.intermedium_ingot, BlockID.intermedium_ingot_block);
-ToolAPI.registerBlockMaterial(BlockID.intermedium_ingot_block, "stone", 2, true);
+MysticalRecipes.addCompressium(ItemID.tertium_ingot, BlockID.tertium_ingot_block);
+ToolAPI.registerBlockMaterial(BlockID.tertium_ingot_block, "stone", 2, true);
 
-IDRegistry.genBlockID("superium_ingot_block");
-Block.createBlock("superium_ingot_block", [
-	{ name: "Imperium Ingot Block", texture: [["superium_ingot_block", 0]], inCreative: true }
+IDRegistry.genBlockID("imperium_ingot_block");
+Block.createBlock("imperium_ingot_block", [
+	{ name: "Imperium Ingot Block", texture: [["imperium_ingot_block", 0]], inCreative: true }
 ], BLOCK_INGOTXGEMSTONE);
-MysticalRecipes.addCompressium(ItemID.superium_ingot, BlockID.superium_ingot_block);
-ToolAPI.registerBlockMaterial(BlockID.superium_ingot_block, "stone", 2, true);
+MysticalRecipes.addCompressium(ItemID.imperium_ingot, BlockID.imperium_ingot_block);
+ToolAPI.registerBlockMaterial(BlockID.imperium_ingot_block, "stone", 2, true);
 
 IDRegistry.genBlockID("supremium_ingot_block");
 Block.createBlock("supremium_ingot_block", [
@@ -117,19 +117,19 @@ Block.createBlock("prudentium_gemstone_block", [
 MysticalRecipes.addCompressium(ItemID.prudentium_gemstone, BlockID.prudentium_gemstone_block);
 ToolAPI.registerBlockMaterial(BlockID.prudentium_gemstone_block, "stone", 2, true);
 
-IDRegistry.genBlockID("intermedium_gemstone_block");
-Block.createBlock("intermedium_gemstone_block", [
-	{ name: "Tertium Gemstone Block", texture: [["intermedium_gemstone_block", 0]], inCreative: true }
+IDRegistry.genBlockID("tertium_gemstone_block");
+Block.createBlock("tertium_gemstone_block", [
+	{ name: "Tertium Gemstone Block", texture: [["tertium_gemstone_block", 0]], inCreative: true }
 ], BLOCK_INGOTXGEMSTONE);
-MysticalRecipes.addCompressium(ItemID.intermedium_gemstone, BlockID.intermedium_gemstone_block);
-ToolAPI.registerBlockMaterial(BlockID.intermedium_gemstone_block, "stone", 2, true);
+MysticalRecipes.addCompressium(ItemID.tertium_gemstone, BlockID.tertium_gemstone_block);
+ToolAPI.registerBlockMaterial(BlockID.tertium_gemstone_block, "stone", 2, true);
 
-IDRegistry.genBlockID("superium_gemstone_block");
-Block.createBlock("superium_gemstone_block", [
-	{ name: "Imperium Gemstone Block", texture: [["superium_gemstone_block", 0]], inCreative: true }
+IDRegistry.genBlockID("imperium_gemstone_block");
+Block.createBlock("imperium_gemstone_block", [
+	{ name: "Imperium Gemstone Block", texture: [["imperium_gemstone_block", 0]], inCreative: true }
 ], BLOCK_INGOTXGEMSTONE);
-MysticalRecipes.addCompressium(ItemID.superium_gemstone, BlockID.superium_gemstone_block);
-ToolAPI.registerBlockMaterial(BlockID.superium_gemstone_block, "stone", 2, true);
+MysticalRecipes.addCompressium(ItemID.imperium_gemstone, BlockID.imperium_gemstone_block);
+ToolAPI.registerBlockMaterial(BlockID.imperium_gemstone_block, "stone", 2, true);
 
 IDRegistry.genBlockID("supremium_gemstone_block");
 Block.createBlock("supremium_gemstone_block", [

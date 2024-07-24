@@ -75,12 +75,12 @@ EntitySoulTypeRegistry.registerWithSeeds("squid", ItemID.squid_seeds, ItemID.pru
 // EntitySoulTypeRegistry.registerWithSeeds("fish", ItemID.fish_seeds, ItemID.prudentium_essence, "Fish", 6, EEntityType.COD, EEntityType.SALMON, EEntityType.TROPICALFISH, EEntityType.PUFFERFISH);
 EntitySoulTypeRegistry.registerWithSeeds("slime", ItemID.slime_seeds, ItemID.prudentium_essence, "Slime", 12, EEntityType.SLIME); // EEntityType.LAVA_SLIME
 EntitySoulTypeRegistry.registerWithSeeds("turtle", ItemID.turtle_seeds, ItemID.prudentium_essence, "Turtle", 6, EEntityType.TURTLE);
-EntitySoulTypeRegistry.registerWithSeeds("zombie", ItemID.zombie_seeds, ItemID.intermedium_essence, "Zombie", 10, EEntityType.ZOMBIE, EEntityType.ZOMBIE_VILLAGER, EEntityType.ZOMBIE_VILLAGER_V2); // EEntityType.ZOMBIE_HORSE, EEntityType.HUSK, EEntityType.DROWNED
-EntitySoulTypeRegistry.registerWithSeeds("skeleton", ItemID.skeleton_seeds, ItemID.intermedium_essence, "Skeleton", 10, EEntityType.SKELETON); // EEntityType.SKELETON_HORSE, EEntityType.STRAY
-EntitySoulTypeRegistry.registerWithSeeds("creeper", ItemID.creeper_seeds, ItemID.intermedium_essence, "Creeper", 10, EEntityType.CREEPER);
-EntitySoulTypeRegistry.registerWithSeeds("spider", ItemID.spider_seeds, ItemID.intermedium_essence, "Spider", 10, EEntityType.SPIDER, EEntityType.CAVE_SPIDER);
-EntitySoulTypeRegistry.registerWithSeeds("rabbit", ItemID.rabbit_seeds, ItemID.intermedium_essence, "Rabbit", 6, EEntityType.RABBIT);
-EntitySoulTypeRegistry.registerWithSeeds("blaze", ItemID.blaze_seeds, ItemID.superium_essence, "Blaze", 10, EEntityType.BLAZE);
-EntitySoulTypeRegistry.registerWithSeeds("ghast", ItemID.ghast_seeds, ItemID.superium_essence, "Ghast", 4, EEntityType.GHAST);
-EntitySoulTypeRegistry.registerWithSeeds("enderman", ItemID.enderman_seeds, ItemID.superium_essence, "Enderman", 8, EEntityType.ENDERMAN);
+EntitySoulTypeRegistry.registerWithSeeds("zombie", ItemID.zombie_seeds, ItemID.tertium_essence, "Zombie", 10, EEntityType.ZOMBIE, EEntityType.ZOMBIE_VILLAGER, EEntityType.ZOMBIE_VILLAGER_V2); // EEntityType.ZOMBIE_HORSE, EEntityType.HUSK, EEntityType.DROWNED
+EntitySoulTypeRegistry.registerWithSeeds("skeleton", ItemID.skeleton_seeds, ItemID.tertium_essence, "Skeleton", 10, EEntityType.SKELETON); // EEntityType.SKELETON_HORSE, EEntityType.STRAY
+EntitySoulTypeRegistry.registerWithSeeds("creeper", ItemID.creeper_seeds, ItemID.tertium_essence, "Creeper", 10, EEntityType.CREEPER);
+EntitySoulTypeRegistry.registerWithSeeds("spider", ItemID.spider_seeds, ItemID.tertium_essence, "Spider", 10, EEntityType.SPIDER, EEntityType.CAVE_SPIDER);
+EntitySoulTypeRegistry.registerWithSeeds("rabbit", ItemID.rabbit_seeds, ItemID.tertium_essence, "Rabbit", 6, EEntityType.RABBIT);
+EntitySoulTypeRegistry.registerWithSeeds("blaze", ItemID.blaze_seeds, ItemID.imperium_essence, "Blaze", 10, EEntityType.BLAZE);
+EntitySoulTypeRegistry.registerWithSeeds("ghast", ItemID.ghast_seeds, ItemID.imperium_essence, "Ghast", 4, EEntityType.GHAST);
+EntitySoulTypeRegistry.registerWithSeeds("enderman", ItemID.enderman_seeds, ItemID.imperium_essence, "Enderman", 8, EEntityType.ENDERMAN);
 EntitySoulTypeRegistry.registerWithSeeds("wither_skeleton", ItemID.wither_skeleton_seeds, ItemID.supremium_essence, "Wither Skeleton", 8, EEntityType.WITHER_SKELETON);

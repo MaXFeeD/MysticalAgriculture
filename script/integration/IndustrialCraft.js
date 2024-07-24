@@ -1,10 +1,10 @@
 ModAPI.addAPICallback("ICore", function(api) {
-	MysticalRecipes.addSeeds(ItemID.copper_seeds, ItemID.intermedium_essence, ItemID.ingotCopper);
-	MysticalRecipes.addSeeds(ItemID.tin_seeds, ItemID.intermedium_essence, ItemID.ingotTin);
-	MysticalRecipes.addSeeds(ItemID.bronze_seeds, ItemID.intermedium_essence, ItemID.ingotBronze);
-	MysticalRecipes.addSeeds(ItemID.steel_seeds, ItemID.superium_essence, ItemID.ingotSteel);
-	MysticalRecipes.addSeeds(ItemID.lead_seeds, ItemID.superium_essence, ItemID.ingotLead);
-	MysticalRecipes.addSeeds(ItemID.silver_seeds, ItemID.superium_essence, ItemID.ingotSilver);
+	MysticalRecipes.addSeeds(ItemID.copper_seeds, ItemID.tertium_essence, ItemID.ingotCopper);
+	MysticalRecipes.addSeeds(ItemID.tin_seeds, ItemID.tertium_essence, ItemID.ingotTin);
+	MysticalRecipes.addSeeds(ItemID.bronze_seeds, ItemID.tertium_essence, ItemID.ingotBronze);
+	MysticalRecipes.addSeeds(ItemID.steel_seeds, ItemID.imperium_essence, ItemID.ingotSteel);
+	MysticalRecipes.addSeeds(ItemID.lead_seeds, ItemID.imperium_essence, ItemID.ingotLead);
+	MysticalRecipes.addSeeds(ItemID.silver_seeds, ItemID.imperium_essence, ItemID.ingotSilver);
 
 	Recipes.addShaped({ id: ItemID.ingotCopper, count: 6, data: 0 }, [
 		"###",

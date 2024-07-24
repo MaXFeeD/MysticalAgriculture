@@ -275,17 +275,17 @@ Block.createBlockWithRotation("prudentium_reprocessor", [
 ]);
 Reprocessor.registerTier("prudentium", BlockID.prudentium_reprocessor, 80, 60, 180000, Native.Color.GREEN);
 
-IDRegistry.genBlockID("intermedium_reprocessor");
-Block.createBlockWithRotation("intermedium_reprocessor", [
-	{ name: "Tertium Seed Reprocessor", texture: [["intermedium_reprocessor_side", 0], ["intermedium_reprocessor_side", 0], ["intermedium_reprocessor_side", 0], ["intermedium_reprocessor_front", 0], ["intermedium_reprocessor_side", 0], ["intermedium_reprocessor_side", 0]], inCreative: true }
+IDRegistry.genBlockID("tertium_reprocessor");
+Block.createBlockWithRotation("tertium_reprocessor", [
+	{ name: "Tertium Seed Reprocessor", texture: [["tertium_reprocessor_side", 0], ["tertium_reprocessor_side", 0], ["tertium_reprocessor_side", 0], ["tertium_reprocessor_front", 0], ["tertium_reprocessor_side", 0], ["tertium_reprocessor_side", 0]], inCreative: true }
 ]);
-Reprocessor.registerTier("tertium", BlockID.intermedium_reprocessor, 55, 100, 300000, Native.Color.GOLD);
+Reprocessor.registerTier("tertium", BlockID.tertium_reprocessor, 55, 100, 300000, Native.Color.GOLD);
 
-IDRegistry.genBlockID("superium_reprocessor");
-Block.createBlockWithRotation("superium_reprocessor", [
-	{ name: "Imperium Seed Reprocessor", texture: [["superium_reprocessor_side", 0], ["superium_reprocessor_side", 0], ["superium_reprocessor_side", 0], ["superium_reprocessor_front", 0], ["superium_reprocessor_side", 0], ["superium_reprocessor_side", 0]], inCreative: true }
+IDRegistry.genBlockID("imperium_reprocessor");
+Block.createBlockWithRotation("imperium_reprocessor", [
+	{ name: "Imperium Seed Reprocessor", texture: [["imperium_reprocessor_side", 0], ["imperium_reprocessor_side", 0], ["imperium_reprocessor_side", 0], ["imperium_reprocessor_front", 0], ["imperium_reprocessor_side", 0], ["imperium_reprocessor_side", 0]], inCreative: true }
 ]);
-Reprocessor.registerTier("imperium", BlockID.superium_reprocessor, 20, 320, 420000, Native.Color.AQUA);
+Reprocessor.registerTier("imperium", BlockID.imperium_reprocessor, 20, 320, 420000, Native.Color.AQUA);
 
 IDRegistry.genBlockID("supremium_reprocessor");
 Block.createBlockWithRotation("supremium_reprocessor", [
@@ -296,6 +296,6 @@ Reprocessor.registerTier("supremium", BlockID.supremium_reprocessor, 5, 1440, 64
 TileEntity.registerPrototype(BlockID.basic_reprocessor, ReprocessorTile);
 TileEntity.registerPrototype(BlockID.inferium_reprocessor, ReprocessorTile);
 TileEntity.registerPrototype(BlockID.prudentium_reprocessor, ReprocessorTile);
-TileEntity.registerPrototype(BlockID.intermedium_reprocessor, ReprocessorTile);
-TileEntity.registerPrototype(BlockID.superium_reprocessor, ReprocessorTile);
+TileEntity.registerPrototype(BlockID.tertium_reprocessor, ReprocessorTile);
+TileEntity.registerPrototype(BlockID.imperium_reprocessor, ReprocessorTile);
 TileEntity.registerPrototype(BlockID.supremium_reprocessor, ReprocessorTile);

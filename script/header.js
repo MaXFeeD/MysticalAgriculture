@@ -36,7 +36,6 @@
 */
 
 IMPORT("ToolLib");
-IMPORT("AgricultureCore");
 IMPORT("EnergyNet");
 
 const ENTITY_HOSTILE = [32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 43,
@@ -72,6 +71,14 @@ const BLOCK_INGOTXGEMSTONE = Block.createSpecialType({
 	translucency: 1.0,
 	sound: "metal"
 });
+var PLANT_BLOCKTYPE = Block.createSpecialType({
+	renderlayer: 3,
+	translucency: 0,
+	lightopacity: 0,
+	destroytime: 0,
+	rendertype: 1,
+	sound: "grass"
+}, "crop");
 
 const translate = function(str, args) {
 	try {
@@ -85,6 +92,10 @@ const translate = function(str, args) {
 		Logger.Log("Mystical Agriculture#translate: " + e, "ERROR");
 		return "" + str;
 	}
+};
+
+const randomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 const MysticalRecipes = {
@@ -201,6 +212,7 @@ const MysticalInventory = {
 };
 
 const MysticalTranslation = {
+	RUSSIAN_UIM: __config__.getBool("translation.russian_uim"),
 	cropTranslations: {
 		"%s Essence": {
 			ko: "%s의 에센스",
@@ -208,29 +220,22 @@ const MysticalTranslation = {
 			zh: "%s精华"
 		},
 		"%s Seeds": {
-			en: "%s Seeds",
 			ko: "%s 씨앗",
 			ru: "Семена %s",
 			zh: "%s种子"
+		},
+		"%s Crop": {
+			ko: "%s 작물", // !
+			ru: "Посев %s",
+			zh: "%s作物"
 		}
-		// "%s Crop": {
-			// ru: "Посев %s"
-		// }
 	},
 	addCropTranslation(source, translation) {
 		let translations = {};
 		for (let key in this.cropTranslations) {
 			let origin = this.cropTranslations[key];
-			if (key == "%s Seeds") {
-				let id = source.toLowerCase().replace(/\s+/g, "_");
-				key = "item.agriculture_core." + id + "_seeds";
-				translations[key] = {
-					en: java.lang.String.format("%s Seeds", source)
-				};
-			} else {
-				key = java.lang.String.format(key, source);
-				translations[key] = {};
-			}
+			key = java.lang.String.format(key, source);
+			translations[key] = {};
 			for (let lang in translation) {
 				if (origin.hasOwnProperty(lang)) {
 					translations[key][lang] = java.lang.String.format(origin[lang], translation[lang]);
