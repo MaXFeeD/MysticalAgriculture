@@ -16,6 +16,8 @@ blocks/crops.js
 souls/types.js
 souls/daggers.js
 souls/jars.js
+tiles/pedestals.js
+tiles/infusions.js
 tiles/reprocessors.js
 integration/VeinMiner.js
 integration/IndustrialCraft.js

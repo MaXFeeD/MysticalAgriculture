@@ -1,3 +1,97 @@
+const ReprocessorTile = __class__({
+	defaultValues: {
+		tier: "basic",
+		progress: 0,
+		fuel: 0,
+		burning: 0,
+		energy: 0
+	},
+	useNetworkItemContainer: true,
+	getScreenName(player, coords) {
+		return "main";
+	},
+	getScreenByName() {
+		return ReprocessorUI;
+	},
+	init() {
+		this.data.tier = Reprocessor.blockTiers[this.blockID];
+	},
+	load() {
+		let tier = Reprocessor.tiers[this.data.tier];
+		if (tier == null) {
+			this.init();
+			tier = Reprocessor.tiers[this.data.tier];
+		}
+		if (tier == null) {
+			Logger.Log("Mystical Agriculture: Reprocessor tier " + JSON.stringify(this.data.tier) + " does not exists or apparently deprecated!", "ERROR");
+			this.selfDestroy();
+			return;
+		}
+		this.capacity = tier.capacity;
+		this.usage = tier.usage;
+		this.operation = tier.operation;
+	},
+	tick() {
+		if (this.data.energy < this.capacity) {
+			if (this.data.burning <= 0) {
+				let fuel = this.container.getSlot("fuel_slot");
+				if (fuel.id != 0) {
+					let duration = Recipes.getFuelBurnDuration(fuel.id, fuel.data);
+					if (duration > 0) {
+						this.container.setSlot("fuel_slot", fuel.id, fuel.count - 1, fuel.data, fuel.extra);
+						this.data.fuel = this.data.burning = duration * 20;
+					}
+				}
+			}
+			if (this.data.burning > 0) {
+				let received = Math.min(this.usage * 2, this.data.burning, this.capacity - this.data.energy);
+				this.data.burning -= received;
+				this.data.energy += received;
+			}
+		}
+
+		if (this.data.energy >= this.usage) {
+			let input = this.container.getSlot("input_slot");
+			if (input.id == this.input || (input.id != 0 && this.input == null)) {
+				if (this.recipe == null || this.input == null) {
+					if (Reprocessor.recipes.hasOwnProperty(input.id)) {
+						this.recipe = Reprocessor.recipes[input.id];
+						this.input = input.id;
+					} else {
+						delete this.recipe;
+						delete this.input;
+					}
+				}
+				if (this.recipe != null) {
+					let output = this.container.getSlot("output_slot");
+					if (output.count == 0 || (output.id == this.recipe && output.count <= 62)) {
+						this.data.progress++;
+						this.data.energy -= this.usage;
+						if (this.data.progress >= this.operation) {
+							output.count += 2;
+							this.container.setSlot("output_slot", this.recipe, output.count, output.data, output.extra);
+							input.count--;
+							this.container.setSlot("input_slot", input.id, input.count, input.data, input.extra);
+							this.data.progress = 0;
+						}
+					}
+				}
+			} else {
+				this.data.progress = 0;
+				delete this.recipe;
+				delete this.input;
+			}
+		}
+
+		this.container.setScale("burning_scale", this.data.fuel != 0 ? this.data.burning / this.data.fuel : 0);
+		this.container.setScale("energy_scale", this.data.energy / this.capacity);
+		this.container.setScale("progress_scale", this.data.progress / this.operation);
+		this.container.validateAll();
+		this.container.sendChanges();
+	}
+});
+
+
 const Reprocessor = {
 	recipes: {},
 	addRecipe: function(input, output) {
@@ -163,100 +257,6 @@ const ReprocessorUI = new UI.StandardWindow({
 });
 
 
-const ReprocessorTile = {
-	defaultValues: {
-		tier: "basic",
-		progress: 0,
-		fuel: 0,
-		burning: 0,
-		energy: 0
-	},
-	useNetworkItemContainer: true,
-	getScreenName(player, coords) {
-		return "main";
-	},
-	getScreenByName() {
-		return ReprocessorUI;
-	},
-	init() {
-		this.data.tier = Reprocessor.blockTiers[this.blockID];
-	},
-	load() {
-		let tier = Reprocessor.tiers[this.data.tier];
-		if (tier == null) {
-			this.init();
-			tier = Reprocessor.tiers[this.data.tier];
-		}
-		if (tier == null) {
-			Logger.Log("Mystical Agriculture: Reprocessor tier " + JSON.stringify(this.data.tier) + " does not exists or apparently deprecated!", "ERROR");
-			this.selfDestroy();
-			return;
-		}
-		this.capacity = tier.capacity;
-		this.usage = tier.usage;
-		this.operation = tier.operation;
-	},
-	tick() {
-		if (this.data.energy < this.capacity) {
-			if (this.data.burning <= 0) {
-				let fuel = this.container.getSlot("fuel_slot");
-				if (fuel.id != 0) {
-					let duration = Recipes.getFuelBurnDuration(fuel.id, fuel.data);
-					if (duration > 0) {
-						this.container.setSlot("fuel_slot", fuel.id, fuel.count - 1, fuel.data, fuel.extra);
-						this.data.fuel = this.data.burning = duration * 20;
-					}
-				}
-			}
-			if (this.data.burning > 0) {
-				let received = Math.min(this.usage * 2, this.data.burning, this.capacity - this.data.energy);
-				this.data.burning -= received;
-				this.data.energy += received;
-			}
-		}
-
-		if (this.data.energy >= this.usage) {
-			let input = this.container.getSlot("input_slot");
-			if (input.id == this.input || (input.id != 0 && this.input == null)) {
-				if (this.recipe == null || this.input == null) {
-					if (Reprocessor.recipes.hasOwnProperty(input.id)) {
-						this.recipe = Reprocessor.recipes[input.id];
-						this.input = input.id;
-					} else {
-						delete this.recipe;
-						delete this.input;
-					}
-				}
-				if (this.recipe != null) {
-					let output = this.container.getSlot("output_slot");
-					if (output.count == 0 || (output.id == this.recipe && output.count <= 62)) {
-						this.data.progress++;
-						this.data.energy -= this.usage;
-						if (this.data.progress >= this.operation) {
-							output.count += 2;
-							this.container.setSlot("output_slot", this.recipe, output.count, output.data, output.extra);
-							input.count--;
-							this.container.setSlot("input_slot", input.id, input.count, input.data, input.extra);
-							this.data.progress = 0;
-						}
-					}
-				}
-			} else {
-				this.data.progress = 0;
-				delete this.recipe;
-				delete this.input;
-			}
-		}
-
-		this.container.setScale("burning_scale", this.data.fuel != 0 ? this.data.burning / this.data.fuel : 0);
-		this.container.setScale("energy_scale", this.data.energy / this.capacity);
-		this.container.setScale("progress_scale", this.data.progress / this.operation);
-		this.container.validateAll();
-		this.container.sendChanges();
-	}
-};
-
-
 IDRegistry.genBlockID("basic_reprocessor");
 Block.createBlockWithRotation("basic_reprocessor", [
 	{ name: "Seed Reprocessor", texture: [["basic_reprocessor_side", 0], ["basic_reprocessor_side", 0], ["basic_reprocessor_side", 0], ["basic_reprocessor_front", 0], ["basic_reprocessor_side", 0], ["basic_reprocessor_side", 0]], inCreative: true }
@@ -293,9 +293,12 @@ Block.createBlockWithRotation("supremium_reprocessor", [
 ]);
 Reprocessor.registerTier("supremium", BlockID.supremium_reprocessor, 5, 1440, 640000, Native.Color.RED);
 
-TileEntity.registerPrototype(BlockID.basic_reprocessor, ReprocessorTile);
-TileEntity.registerPrototype(BlockID.inferium_reprocessor, ReprocessorTile);
-TileEntity.registerPrototype(BlockID.prudentium_reprocessor, ReprocessorTile);
-TileEntity.registerPrototype(BlockID.tertium_reprocessor, ReprocessorTile);
-TileEntity.registerPrototype(BlockID.imperium_reprocessor, ReprocessorTile);
-TileEntity.registerPrototype(BlockID.supremium_reprocessor, ReprocessorTile);
+(function() {
+	let reprocessor = new ReprocessorTile();
+	TileEntity.registerPrototype(BlockID.basic_reprocessor, reprocessor);
+	TileEntity.registerPrototype(BlockID.inferium_reprocessor, reprocessor);
+	TileEntity.registerPrototype(BlockID.prudentium_reprocessor, reprocessor);
+	TileEntity.registerPrototype(BlockID.tertium_reprocessor, reprocessor);
+	TileEntity.registerPrototype(BlockID.imperium_reprocessor, reprocessor);
+	TileEntity.registerPrototype(BlockID.supremium_reprocessor, reprocessor);
+})();
