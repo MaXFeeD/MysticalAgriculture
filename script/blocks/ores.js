@@ -1,7 +1,7 @@
 IDRegistry.genBlockID("inferium_ore");
 Block.createBlock("inferium_ore", [
 	{ name: "Inferium Ore", texture: [["inferium_ore", 0]], inCreative: true }
-]);
+], BLOCK_STONE);
 Recipes.addFurnace(BlockID.inferium_ore, ItemID.inferium_essence, 0);
 ToolAPI.registerBlockMaterial(BlockID.inferium_ore, "stone", 2, true);
 
@@ -20,7 +20,7 @@ Block.registerDropFunction("inferium_ore", function(coords, blockID, blockData, 
 IDRegistry.genBlockID("prosperity_ore");
 Block.createBlock("prosperity_ore", [
 	{ name: "Prosperity Ore", texture: [["prosperity_ore", 0]], inCreative: true }
-]);
+], BLOCK_STONE);
 Recipes.addFurnace(BlockID.prosperity_ore, ItemID.prosperity_shard, 0);
 ToolAPI.registerBlockMaterial(BlockID.prosperity_ore, "stone", 2, true);
 
