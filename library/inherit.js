@@ -5,13 +5,28 @@ LIBRARY({
 	api: "CoreEngine"
 });
 
-function __inherit__(to, from, references) {
-	if (typeof to !== "object" || to === null) {
-		throw new TypeError("To object " + String(to) + " is not a object or null");
-	}
-	if (typeof from !== "object" || from === null) {
-		throw new TypeError("From object " + String(from) + " is not a object or null");
-	}
+if (typeof Object.assign != "function") {
+	Object.assign = function(target, varArgs) {
+		"use strict";
+		if (target == null) {
+			throw new TypeError("Cannot convert undefined or null to object");
+		}
+		let to = Object(target);
+		for (let index = 1; index < arguments.length; index++) {
+			let nextSource = arguments[index];
+			if (nextSource != null) {
+				for (let nextKey in nextSource) {
+					if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+						to[nextKey] = nextSource[nextKey];
+					}
+				}
+			}
+		}
+		return to;
+	};
+}
+
+function __expand__(to, from, references) {
 	if ((references || (references = [])).indexOf(from) != -1) {
 		return;
 	}
@@ -26,46 +41,30 @@ function __inherit__(to, from, references) {
 				to[key] = from[key];
 				continue;
 			}
-			let inherits = to[key];
-			to[key] = (Object.assign || function(t, p) { for (var k in p) if (Object.prototype.hasOwnProperty.call(p, k)) t[k] = p[k]; })({}, to[key]);
-			__inherit__(to[key], from[key], references);
-			to[key].$ = inherits;
+			to[key] = Object.assign({}, to[key]);
+			__expand__(to[key], from[key], references);
 		}
 	}
 }
 
-function __class__(obj, proto) {
-	if (typeof obj !== "object" || obj === null) {
-		throw new TypeError("Class " + String(obj) + " is not a prototype or null");
+function __inherit__(target, base, mixins) {
+	if (typeof base != "function" && base !== null) {
+		throw new TypeError("Class extends value " + String(base) + " is not a constructor or null");
 	}
-	let target = obj.constructor || (obj.constructor = function() { return proto && proto.apply(this, arguments) || this; });
-	if (target.prototype === Object.prototype || (proto != null && target.prototype === proto.prototype)) {
-		let constructed = false;
-		target = (function(proto) {
-			return function() {
-				return constructed ? proto.apply(this, arguments) : (constructed = true);
-			};
-		})(target);
-		new target();
-	}
-	if (proto !== undefined) {
-		if (typeof proto !== "function" && proto !== null) {
-			throw new TypeError("Class extends value " + String(proto) + " is not a constructor or null");
-		}
-		(Object.setPrototypeOf || function(t, p) { t.__proto__ = p; })(target, proto);
-		if (proto === null) {
-			target.prototype = Object.create(proto);
-		} else {
-			function __() { this.constructor = target; }
-			__.prototype = proto.prototype;
-			target.prototype = new __();
-		}
-		target.prototype.$ = proto === null ? target.prototype : proto.prototype;
-		__inherit__(target.prototype, obj);
+	(Object.setPrototypeOf || function(t, p) { t.__proto__ = p; })(target, base);
+	if (base === null) {
+		target.prototype = Object.create(base);
 	} else {
-		target.prototype = obj;
+		let __ = function() {
+			this.constructor = target;
+		};
+		__.prototype = base.prototype;
+		target.prototype = new __();
 	}
-	return target;
+	__expand__(target, base);
+	for (let offset = 2; offset < arguments.length; offset++) {
+		__expand__(target.prototype, arguments[offset]);
+	}
 }
 
-EXPORT("__class__", __class__);
+EXPORT("__inherit__", __inherit__);

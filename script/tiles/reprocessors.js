@@ -1,16 +1,20 @@
-const ReprocessorTile = __class__({
-	defaultValues: {
+const ReprocessorTile = function() {
+	this.defaultValues || (this.defaultValues = {});
+	Object.assign(this.defaultValues, {
 		tier: "basic",
 		progress: 0,
 		fuel: 0,
 		burning: 0,
 		energy: 0
-	},
+	});
+};
+
+ReprocessorTile.prototype = {
 	useNetworkItemContainer: true,
 	getScreenName(player, coords) {
 		return "main";
 	},
-	getScreenByName() {
+	getScreenByName(name) {
 		return ReprocessorUI;
 	},
 	init() {
@@ -89,7 +93,7 @@ const ReprocessorTile = __class__({
 		this.container.validateAll();
 		this.container.sendChanges();
 	}
-});
+};
 
 
 const Reprocessor = {
@@ -293,7 +297,7 @@ Block.createBlockWithRotation("supremium_reprocessor", [
 ]);
 Reprocessor.registerTier("supremium", BlockID.supremium_reprocessor, 5, 1440, 640000, Native.Color.RED);
 
-(function() {
+{
 	let reprocessor = new ReprocessorTile();
 	TileEntity.registerPrototype(BlockID.basic_reprocessor, reprocessor);
 	TileEntity.registerPrototype(BlockID.inferium_reprocessor, reprocessor);
@@ -301,4 +305,4 @@ Reprocessor.registerTier("supremium", BlockID.supremium_reprocessor, 5, 1440, 64
 	TileEntity.registerPrototype(BlockID.tertium_reprocessor, reprocessor);
 	TileEntity.registerPrototype(BlockID.imperium_reprocessor, reprocessor);
 	TileEntity.registerPrototype(BlockID.supremium_reprocessor, reprocessor);
-})();
+}

@@ -148,7 +148,7 @@ const MysticalRecipes = {
 			" g "
 		], ["#", input, 0, "g", gemstone, 0, "x", ingot, 0]);
 	},
-	addEssenceUpgrade(input, result) {
+	addEssenceUpgrade(result, input) {
 		Recipes.addShaped({ id: result, count: 1, data: 0 }, [
 			" x ",
 			"x#x",
@@ -281,7 +281,7 @@ Callback.addCallback("LevelPreLeft", function() {
 	LevelDisplayedQueue.to(false);
 });
 
-const ClientTileEntity = {
+const LocalTileEntity = {
 	map: {},
 	get(x, y, z, dimension) {
 		let key = Math.floor(x) + "," + Math.floor(y) + "," + Math.floor(z);

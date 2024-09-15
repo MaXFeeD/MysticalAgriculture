@@ -158,13 +158,13 @@ Callback.addCallback("ServerPlayerTick", function(playerUid) {
 			}
 		}
 		if (MysticalArmorBuffType.equipped != MysticalArmorBuffType.NONE) {
-			if (equipped >= MysticalArmorBuffType.SUPREMIUM) {
+			if (MysticalArmorBuffType.equipped >= MysticalArmorBuffType.SUPREMIUM) {
 				new PlayerActor(playerUid).setCanFly(false);
 			}
-			if (equipped >= MysticalArmorBuffType.TERTIUM) {
+			if (MysticalArmorBuffType.equipped >= MysticalArmorBuffType.TERTIUM) {
 				Entity.clearEffect(playerUid, Native.PotionEffect.jump);
 			}
-			if (equipped >= MysticalArmorBuffType.PRUDENTIUM) {
+			if (MysticalArmorBuffType.equipped >= MysticalArmorBuffType.PRUDENTIUM) {
 				Entity.clearEffect(playerUid, Native.PotionEffect.waterBreathing);
 			}
 			MysticalArmorBuffType.equipped = MysticalArmorBuffType.NONE;

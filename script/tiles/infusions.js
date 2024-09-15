@@ -1,14 +1,26 @@
-const InfusionPedestalTile = __class__({
+const InfusionPedestalTile = function() {
+	AbstractPedestalTile.apply(this, arguments);
+};
+
+__inherit__(InfusionPedestalTile, AbstractPedestalTile, {
 	isConnectable(altar) {
 		return altar != null && altar.blockID == BlockID.infusion_altar;
 	}
-}, AbstractPedestalTile);
+});
 
-const InfusionAltarTile = __class__({
-	defaultValues: {
+const InfusionAltarTile = function() {
+	AbstractPedestalTile.apply(this, arguments);
+	Object.assign(this.defaultValues, {
 		progress: 0,
 		powered: false
-	},
+	});
+};
+InfusionAltarTile.PEDESTAL_OFFSETS = [
+	[3, 0], [-3, 0], [0, 3], [0, -3],
+	[2, 2], [-2, 2], [2, -2], [-2, -2]
+];
+
+__inherit__(InfusionAltarTile, AbstractPedestalTile, {
 	client: {
 		events: {
 			loadPedestals(data, extra) {
@@ -30,7 +42,7 @@ const InfusionAltarTile = __class__({
 		},
 		load() {
 			this.blockSource = BlockSource.getCurrentClientRegion();
-			this.$.load.apply(this, arguments);
+			AbstractPedestalTile.prototype.client.load.apply(this, arguments);
 			this.highlightedPedestals = {};
 			this.pedestals = [];
 			if (this.scheduledPedestals != null) {
@@ -133,7 +145,7 @@ const InfusionAltarTile = __class__({
 			let particles = [];
 			for (let index = 0, length = this.pedestals.length, offset; index < length; index++) {
 				offset = this.pedestals[index];
-				let pedestal = ClientTileEntity.get(this.x + offset[0], this.y, this.z + offset[1], this.dimension);
+				let pedestal = LocalTileEntity.get(this.x + offset[0], this.y, this.z + offset[1], this.dimension);
 				if (pedestal != null) {
 					let dx = this.x + 0.4 + Math.random() * 0.2;
 					let dy = this.y + 1.2 + Math.random() * 0.2;
@@ -174,14 +186,14 @@ const InfusionAltarTile = __class__({
 			this.infusionParticlesOffset = (this.infusionParticlesOffset + 1) % 10;
 		},
 		unload() {
-			this.$.unload.apply(this, arguments);
+			AbstractPedestalTile.prototype.client.unload.apply(this, arguments);
 			this.unloadPedestalHolograms();
 			delete this.pedestals;
 			delete this.highlightedPedestals;
 		}
 	},
 	load() {
-		this.$.load.apply(this, arguments);
+		AbstractPedestalTile.prototype.load.apply(this, arguments);
 		this.pedestals = [];
 		let packet = [];
 		for (let index = 0, length = InfusionAltarTile.PEDESTAL_OFFSETS.length, offset; index < length; index++) {
@@ -254,12 +266,7 @@ const InfusionAltarTile = __class__({
 			this.data.progress = 0;
 		}
 	}
-}, AbstractPedestalTile);
-
-InfusionAltarTile.PEDESTAL_OFFSETS = [
-	[3, 0], [-3, 0], [0, 3], [0, -3],
-	[2, 2], [-2, 2], [2, -2], [-2, -2]
-];
+});
 
 InfusionAltarTile.searchPedestalAround = function(pedestal, then) {
 	for (let i = 0, l = InfusionAltarTile.PEDESTAL_OFFSETS.length; i < l; i++) {
@@ -293,7 +300,7 @@ Block.createBlock("infusion_pedestal", [
 	{ name: "Infusion Pedestal", texture: [["stone", 0]], inCreative: true }
 ]);
 
-(function() {
+{
 	let renderer = new ICRender.Model();
 	let model = BlockRenderer.createModel();
 	model.addBox(1/8, 0, 1/8, 5/16, 1/8, 5/16, "stone", 0);
@@ -364,7 +371,7 @@ Block.createBlock("infusion_pedestal", [
 	shape.addBox(3/16, 1/8, 3/16, 13/16, 1, 13/16);
 	shape.addBox(1/8, 0, 1/8, 7/8, 1/8, 7/8);
 	BlockRenderer.setCustomCollisionAndRaycastShape(BlockID.infusion_pedestal, -1, collision);
-})();
+}
 
 TileEntity.registerPrototype(BlockID.infusion_pedestal, new InfusionPedestalTile());
 
@@ -374,7 +381,7 @@ Block.createBlock("infusion_altar", [
 	{ name: "Infusion Altar", texture: [[ "stone", 0 ]], inCreative: true }
 ]);
 
-(function() {
+{
 	let renderer = new ICRender.Model();
 	let model = BlockRenderer.createModel();
 	model.addBox(0, 0, 0, 1, 1/2, 1, [
@@ -491,12 +498,14 @@ Block.createBlock("infusion_altar", [
 	shape.addBox(0, 0, 0, 1, 5/8, 1);
 	shape.addBox(1/8, 5/8, 1/8, 7/8, 29/32, 7/8);
 	BlockRenderer.setCustomCollisionAndRaycastShape(BlockID.infusion_altar, -1, collision);
-})();
+}
 
 TileEntity.registerPrototype(BlockID.infusion_altar, new InfusionAltarTile());
 
 
-const AbstractPedestalStorage = {
+const PedestalStorage = function() {};
+
+PedestalStorage.prototype = {
 	getSlot(name) {
 		return this.tileEntity.data.floatingItem;
 	},
@@ -514,8 +523,11 @@ const AbstractPedestalStorage = {
 	}
 };
 
-StorageInterface.createInterface(BlockID.infusion_pedestal, AbstractPedestalStorage);
-StorageInterface.createInterface(BlockID.infusion_altar, AbstractPedestalStorage);
+{
+	let storage = new PedestalStorage();
+	StorageInterface.createInterface(BlockID.infusion_pedestal, storage);
+	StorageInterface.createInterface(BlockID.infusion_altar, storage);
+}
 
 
 const InfusionRecipeRegistry = {

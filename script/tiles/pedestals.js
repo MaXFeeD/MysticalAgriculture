@@ -1,11 +1,16 @@
-const AbstractPedestalTile = __class__({
-	defaultValues: {
+const AbstractPedestalTile = function() {
+	this.defaultValues || (this.defaultValues = {});
+	Object.assign(this.defaultValues, {
 		floatingItem: {
 			id: 0,
 			data: 0,
 			extra: null
 		}
-	},
+	});
+};
+AbstractPedestalTile.ROTATION_DELTA = 130;
+
+AbstractPedestalTile.prototype = {
 	networkVisibilityDistance: 48,
 	client: {
 		load() {
@@ -15,7 +20,7 @@ const AbstractPedestalTile = __class__({
 			};
 			this.networkData.addOnDataChangedListener(this.__networkDataListener);
 			this.describeFloatingItem();
-			ClientTileEntity.notifyAdded(this);
+			LocalTileEntity.notifyAdded(this);
 		},
 		loadFloatingItem() {
 			if (this.floatingItem != null) {
@@ -47,7 +52,6 @@ const AbstractPedestalTile = __class__({
 			}
 			this.loadFloatingItem();
 			this.floatingItem.describeItem({
-				// id: AbstractPedestalTile.getRandomId(),
 				id: Network.serverToLocalId(id),
 				data: data,
 				notRandomize: true
@@ -66,7 +70,7 @@ const AbstractPedestalTile = __class__({
 				this.networkData.removeOnDataChangedListener(this.__networkDataListener);
 				delete this.__networkDataListener;
 			}
-			ClientTileEntity.notifyRemoved(this);
+			LocalTileEntity.notifyRemoved(this);
 			this.unloadFloatingItem();
 		}
 	},
@@ -141,6 +145,4 @@ const AbstractPedestalTile = __class__({
 		this.replaceFloatingItem(id, count, data, extra, player);
 		return true;
 	}
-});
-
-AbstractPedestalTile.ROTATION_DELTA = 130;
+};
