@@ -73,6 +73,11 @@ const BLOCK_INGOTXGEMSTONE = Block.createSpecialType({
 	translucency: 1.0,
 	sound: "metal"
 });
+const BLOCK_STONE = Block.createSpecialType({
+	solid: true,
+	renderlayer: EBlockRenderLayer.BLEND,
+	explosionres: 6.0
+});
 var PLANT_BLOCKTYPE = Block.createSpecialType({
 	renderlayer: 3,
 	translucency: 0,
