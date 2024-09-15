@@ -19,11 +19,11 @@
                                ███    ███                            ▀                                  ███    ███             
 
    Copyright 2024 Mystical Agriculture BE
-      hed3i (github.com/hed3i)
       MaXFeeD (github.com/MaXFeeD)
       Artem0n4 (github.com/Artem0n4)
       Sergeyoshi (github.com/sergeyoshi)
       Hunabis (github.com/Hunabis)
+      hed3i (github.com/hed3i)
 
    Terms of use:
       Forbidden to distribute code, resources and any parts of this mod without mentioning original source (vk.com/mysticalpe).
