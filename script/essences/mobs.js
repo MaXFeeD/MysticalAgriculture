@@ -181,10 +181,6 @@ Recipes.addShaped({ id: VanillaBlockID.wool, count: 6, data: 0 }, [
 ], ["#", ItemID.sheep_essence, 0]);
 
 
-IDRegistry.genItemID("silver_essence");
-Item.createItem("silver_essence", "Silver Essence", { name: "silver_essence", meta: 0 });
-
-
 IDRegistry.genItemID("skeleton_essence");
 Item.createItem("skeleton_essence", "Skeleton Essence", { name: "skeleton_essence", meta: 0 });
 

@@ -47,7 +47,7 @@ const ENTITY_HOSTILE = [32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 43,
 const GLASS_ANTIBOOM = Block.createSpecialType({
 	renderlayer: EBlockRenderLayer.BLEND,
 	lightopacity: 1,
-	explosionres: 500.0,
+	explosionres: 1000.0,
 	translucency: 1.0,
 	destroytime: 4,
 	sound: "glass"
@@ -56,7 +56,7 @@ const BLOCK_ANTIBOOM = Block.createSpecialType({
 	solid: true,
 	renderlayer: EBlockRenderLayer.BLEND,
 	lightopacity: 9,
-	explosionres: 500.0,
+	explosionres: 1000.0,
 	translucency: 1.0
 });
 const BLOCK_GLASS = Block.createSpecialType({
@@ -76,7 +76,9 @@ const BLOCK_INGOTXGEMSTONE = Block.createSpecialType({
 const BLOCK_STONE = Block.createSpecialType({
 	solid: true,
 	renderlayer: EBlockRenderLayer.BLEND,
-	explosionres: 6.0
+	explosionres: 4.0,
+	lightopacity: 15,
+	translucency: 0.0
 });
 var PLANT_BLOCKTYPE = Block.createSpecialType({
 	renderlayer: 3,
@@ -121,30 +123,6 @@ const MysticalRecipes = {
 				{ id: result, data: 0 }
 			]);
 		}
-	},
-	addSeeds(result, essence, platingId, platingData) {
-		platingData || (platingData = 0);
-		Recipes.addShaped({ id: result, count: 1, data: 0 }, [
-			"x#x",
-			"#b#",
-			"x#x"
-		], ["#", essence, 0, "x", platingId, platingData, "b", ItemID.crafting_seed_base, 0]);
-	},
-	addSoliumSeeds(result, essence, type, capacity) {
-		Recipes.addShaped({ id: result, count: 1, data: 0 }, [
-			"x#x",
-			"#b#",
-			"x#x"
-		], ["#", essence, 0, "x", ItemID.soul_jar, capacity, "b", ItemID.soulium_seed_base, 0], function(api, fields, result, player) {
-			for (let slot = 0; slot < 9; slot++){
-				let field = api.getFieldSlot(slot);
-				if (field.id == ItemID.soul_jar && (!field.extra || field.extra.getString("soulType") != type)) {
-					api.prevent();
-				} else {
-				    api.decreaseFieldSlot(slot);
-				}
-			}
-		});
 	},
 	addGemstoneUpgrade(result, input, gemstone, ingot) {
 		Recipes.addShaped({ id: result, count: 1, data: 0 }, [

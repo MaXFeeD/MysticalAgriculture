@@ -100,25 +100,3 @@ Recipes.addShaped({ id: VanillaBlockID.stone, count: 16, data: 5 }, [
 
 IDRegistry.genItemID("netherite_essence");
 Item.createItem("netherite_essence", "Netherite Essence", { name: "netherite_essence", meta: 0 });
-
-
-// TODO: Move to integrations!
-
-IDRegistry.genItemID("copper_essence");
-Item.createItem("copper_essence", "Copper Essence", { name: "copper_essence", meta: 0 });
-
-
-IDRegistry.genItemID("tin_essence");
-Item.createItem("tin_essence", "Tin Essence", { name: "tin_essence", meta: 0 });
-
-
-IDRegistry.genItemID("steel_essence");
-Item.createItem("steel_essence", "Steel Essence", { name: "steel_essence", meta: 0 });
-
-
-IDRegistry.genItemID("lead_essence");
-Item.createItem("lead_essence", "Lead Essence", { name: "lead_essence", meta: 0 });
-
-
-IDRegistry.genItemID("bronze_essence");
-Item.createItem("bronze_essence", "Bronze Essence", { name: "bronze_essence", meta: 0 });

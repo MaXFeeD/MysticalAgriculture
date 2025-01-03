@@ -2,7 +2,6 @@ IDRegistry.genBlockID("soulstone");
 Block.createBlock("soulstone", [
 	{ name: "Soulstone", texture: [["soulstone", 0]], inCreative: true }
 ]);
-Recipes.addFurnace(BlockID.soulstone, BlockID.soulstone_smooth, 0);
 ToolAPI.registerBlockMaterial(BlockID.soulstone, "stone", 2, true);
 
 Block.registerDropFunction("soulstone", function(coords, blockID, blockData, level, enchant) {
@@ -27,6 +26,7 @@ IDRegistry.genBlockID("soulstone_smooth");
 Block.createBlock("soulstone_smooth", [
 	{ name: "Smooth Soulstone", texture: [["soulstone_smooth", 0]], inCreative: true }
 ]);
+Recipes.addFurnace(BlockID.soulstone, BlockID.soulstone_smooth, 0);
 Recipes.addFurnace(BlockID.soulstone_smooth, ItemID.soul_dust, 0);
 ToolAPI.registerBlockMaterial(BlockID.soulstone_smooth, "stone", 2, true);
 

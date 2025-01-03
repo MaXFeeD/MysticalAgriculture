@@ -103,7 +103,6 @@ const CropRegistry = {
 
 
 CropRegistry.register("inferium", "Inferium", CropTier.ONE, CropType.RESOURCE, ItemID.inferium_essence);
-
 Recipes.addShaped({ id: ItemID.inferium_seeds, count: 1, data: 0 }, [
 	"###",
 	"#b#",
@@ -112,74 +111,147 @@ Recipes.addShaped({ id: ItemID.inferium_seeds, count: 1, data: 0 }, [
 
 
 CropRegistry.register("dirt", "Dirt", CropTier.ONE, CropType.RESOURCE, ItemID.dirt_essence);
-MysticalRecipes.addSeeds(ItemID.dirt_seeds, ItemID.inferium_essence, VanillaBlockID.dirt);
+InfusionRecipeRegistry.registerRecipe(ItemID.dirt_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaBlockID.dirt, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("air", "Air", CropTier.ONE, CropType.RESOURCE, ItemID.air_essence);
-MysticalRecipes.addSeeds(ItemID.air_seeds, ItemID.inferium_essence, ItemID.air_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.air_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.air_agglomeratio, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("earth", "Earth", CropTier.ONE, CropType.RESOURCE, ItemID.earth_essence);
-MysticalRecipes.addSeeds(ItemID.earth_seeds, ItemID.inferium_essence, ItemID.earth_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.earth_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.earth_agglomeratio, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("nature", "Nature", CropTier.ONE, CropType.RESOURCE, ItemID.nature_essence);
-MysticalRecipes.addSeeds(ItemID.nature_seeds, ItemID.inferium_essence, ItemID.nature_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.nature_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.nature_agglomeratio, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("wood", "Wood", CropTier.ONE, CropType.RESOURCE, ItemID.wood_essence);
-MysticalRecipes.addSeeds(ItemID.wood_seeds, ItemID.inferium_essence, VanillaBlockID.log, -1);
-MysticalRecipes.addSeeds(ItemID.wood_seeds, ItemID.inferium_essence, VanillaBlockID.log2, -1);
+InfusionRecipeRegistry.registerRecipe(ItemID.wood_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaBlockID.log, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
+	
+InfusionRecipeRegistry.registerRecipe(ItemID.wood_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaBlockID.log2, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("stone", "Stone", CropTier.ONE, CropType.RESOURCE, ItemID.stone_essence);
-MysticalRecipes.addSeeds(ItemID.stone_seeds, ItemID.inferium_essence, VanillaBlockID.stone);
+InfusionRecipeRegistry.registerRecipe(ItemID.stone_seeds, ItemID.crafting_seed_base, [
+{ id: VanillaBlockID.stone, count: 4 },
+{ id: ItemID.inferium_essence, count: 4 }
+]);
 
 CropRegistry.register("coal", "Coal", CropTier.TWO, CropType.RESOURCE, ItemID.coal_essence);
-MysticalRecipes.addSeeds(ItemID.coal_seeds, ItemID.prudentium_essence, VanillaItemID.coal, -1);
+InfusionRecipeRegistry.registerRecipe(ItemID.coal_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaBlockID.coal, count: 4 },
+	{ id: ItemID.prudentium_essence, count: 4 }
+	]);
 
 CropRegistry.register("iron", "Iron", CropTier.THREE, CropType.RESOURCE, ItemID.iron_essence);
-MysticalRecipes.addSeeds(ItemID.iron_seeds, ItemID.tertium_essence, VanillaItemID.iron_ingot);
+InfusionRecipeRegistry.registerRecipe(ItemID.iron_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.iron_ingot, count: 4 },
+	{ id: ItemID.tertium_essence, count: 4 }
+	]);
 
 CropRegistry.register("gold", "Gold", CropTier.FOUR, CropType.RESOURCE, ItemID.gold_essence);
-MysticalRecipes.addSeeds(ItemID.gold_seeds, ItemID.imperium_essence, VanillaItemID.gold_ingot);
+InfusionRecipeRegistry.registerRecipe(ItemID.gold_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.gold_ingot, count: 4 },
+	{ id: ItemID.imperium_essence, count: 4 }
+	]);
 
 CropRegistry.register("lapis_lazuli", "Lapis Lazuli", CropTier.FOUR, CropType.RESOURCE, ItemID.lapis_essence);
-MysticalRecipes.addSeeds(ItemID.lapis_lazuli_seeds, ItemID.imperium_essence, VanillaItemID.dye, 4);
+InfusionRecipeRegistry.registerRecipe(ItemID.lapis_lazuli_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.lapis_lazuli, count: 4 },
+	{ id: ItemID.imperium_essence, count: 4 }
+	]);
 
 CropRegistry.register("redstone", "Redstone", CropTier.THREE, CropType.RESOURCE, ItemID.redstone_essence);
-MysticalRecipes.addSeeds(ItemID.redstone_seeds, ItemID.tertium_essence, VanillaItemID.redstone);
+InfusionRecipeRegistry.registerRecipe(ItemID.redstone_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.redstone, count: 4 },
+	{ id: ItemID.tertium_essence, count: 4 }
+	]);
 
 CropRegistry.register("diamond", "Diamond", CropTier.FIVE, CropType.RESOURCE, ItemID.diamond_essence);
-MysticalRecipes.addSeeds(ItemID.diamond_seeds, ItemID.supremium_essence, VanillaItemID.diamond);
+InfusionRecipeRegistry.registerRecipe(ItemID.diamond_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.diamond, count: 4 },
+	{ id: ItemID.supremium_essence, count: 4 }
+	]);
 
 CropRegistry.register("emerald", "Emerald", CropTier.FIVE, CropType.RESOURCE, ItemID.emerald_essence);
-MysticalRecipes.addSeeds(ItemID.emerald_seeds, ItemID.supremium_essence, VanillaItemID.emerald);
+InfusionRecipeRegistry.registerRecipe(ItemID.emerald_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.emerald, count: 4 },
+	{ id: ItemID.supremium_essence, count: 4 }
+	]);
 
 CropRegistry.register("prismarine", "Prismarine", CropTier.THREE, CropType.RESOURCE, ItemID.prismarine_essence);
-MysticalRecipes.addSeeds(ItemID.prismarine_seeds, ItemID.tertium_essence, ItemID.prismarine_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.prismarine_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.prismarine_agglomeratio, count: 4 },
+	{ id: ItemID.tertium_essence, count: 4 }
+	]);
 
 CropRegistry.register("netherite", "Netherite", CropTier.FIVE, CropType.RESOURCE, ItemID.netherite_essence);
-MysticalRecipes.addSeeds(ItemID.netherite_seeds, ItemID.supremium_essence, 728);
+InfusionRecipeRegistry.registerRecipe(ItemID.netherite_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.netherite_ingot, count: 4 },
+	{ id: ItemID.supremium_essence, count: 4 }
+	]);
 
 CropRegistry.register("glowstone", "Glowstone", CropTier.THREE, CropType.RESOURCE, ItemID.glowstone_essence);
-MysticalRecipes.addSeeds(ItemID.glowstone_seeds, ItemID.tertium_essence, VanillaItemID.glowstone_dust);
+InfusionRecipeRegistry.registerRecipe(ItemID.glowstone_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.glowstone_dust, count: 4 },
+	{ id: ItemID.tertium_essence, count: 4 }
+	]);
 
 CropRegistry.register("fire", "Fire", CropTier.ONE, CropType.RESOURCE, ItemID.fire_essence);
-MysticalRecipes.addSeeds(ItemID.fire_seeds, ItemID.inferium_essence, ItemID.fire_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.fire_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.fire_agglomeratio, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("ice", "Ice", CropTier.ONE, CropType.RESOURCE, ItemID.ice_essence);
-MysticalRecipes.addSeeds(ItemID.ice_seeds, ItemID.inferium_essence, VanillaBlockID.ice);
+InfusionRecipeRegistry.registerRecipe(ItemID.ice_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaBlockID.ice, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("water", "Water", CropTier.ONE, CropType.RESOURCE, ItemID.water_essence);
-MysticalRecipes.addSeeds(ItemID.water_seeds, ItemID.inferium_essence, ItemID.water_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.water_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.water_agglomeratio, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("nether", "Nether", CropTier.ONE, CropType.RESOURCE, ItemID.nether_essence);
-MysticalRecipes.addSeeds(ItemID.nether_seeds, ItemID.inferium_essence, ItemID.nether_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.nether_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.nether_agglomeratio, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("end", "End", CropTier.ONE, CropType.RESOURCE, ItemID.end_essence);
-MysticalRecipes.addSeeds(ItemID.end_seeds, ItemID.inferium_essence, ItemID.end_agglomeratio);
+InfusionRecipeRegistry.registerRecipe(ItemID.end_seeds, ItemID.crafting_seed_base, [
+	{ id: ItemID.end_agglomeratio, count: 4 },
+	{ id: ItemID.inferium_essence, count: 4 }
+	]);
 
 CropRegistry.register("obsidian", "Obsidian", CropTier.THREE, CropType.RESOURCE, ItemID.obsidian_essence);
-MysticalRecipes.addSeeds(ItemID.obsidian_seeds, ItemID.tertium_essence, VanillaBlockID.obsidian);
+InfusionRecipeRegistry.registerRecipe(ItemID.obsidian_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaBlockID.obsidian, count: 4 },
+	{ id: ItemID.tertium_essence, count: 4 }
+	]);
 
 CropRegistry.register("nether_quartz", "Nether Quartz", CropTier.THREE, CropType.RESOURCE, ItemID.quartz_essence);
-MysticalRecipes.addSeeds(ItemID.nether_quartz_seeds, ItemID.tertium_essence, VanillaItemID.quartz);
+InfusionRecipeRegistry.registerRecipe(ItemID.nether_quartz_seeds, ItemID.crafting_seed_base, [
+	{ id: VanillaItemID.quartz, count: 4 },
+	{ id: ItemID.tertium_essence, count: 4 }
+	]);
 
 CropRegistry.register("zombie", "Zombie", CropTier.THREE, CropType.MOB, ItemID.zombie_essence);
 CropRegistry.register("cow", "Cow", CropTier.TWO, CropType.MOB, ItemID.cow_essence);
@@ -200,9 +272,5 @@ CropRegistry.register("spider", "Spider", CropTier.THREE, CropType.MOB, ItemID.s
 CropRegistry.register("squid", "Squid", CropTier.TWO, CropType.MOB, ItemID.squid_essence);
 CropRegistry.register("slime", "Slime", CropTier.TWO, CropType.MOB, ItemID.slime_essence);
 
-// TODO: Move to integrations!
-CropRegistry.register("bronze", "Bronze", CropTier.THREE, CropType.RESOURCE, ItemID.bronze_essence);
-CropRegistry.register("copper", "Copper", CropTier.THREE, CropType.RESOURCE, ItemID.copper_essence);
-CropRegistry.register("tin", "Tin", CropTier.THREE, CropType.RESOURCE, ItemID.tin_essence);
-CropRegistry.register("steel", "Steel", CropTier.FOUR, CropType.RESOURCE, ItemID.steel_essence);
-CropRegistry.register("lead", "Lead", CropTier.THREE, CropType.RESOURCE, ItemID.lead_essence);
+
+

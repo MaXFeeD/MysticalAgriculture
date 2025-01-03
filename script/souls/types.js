@@ -23,7 +23,6 @@ const EntitySoulTypeRegistry = {
 		let registeringArguments = Array.prototype.slice.call(arguments);
 		registeringArguments.splice(1, 2);
 		if (this.register.apply(this, registeringArguments)) {
-			MysticalRecipes.addSoliumSeeds(seeds, essence, identifier, capacity);
 			return true;
 		}
 		return false;
