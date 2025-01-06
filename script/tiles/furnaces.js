@@ -540,7 +540,7 @@ TileEntity.registerPrototype(BlockID.mystical_furnace, {
             }
         }
         
-        if(this.data.burn > 0 && this.data.progress == 0) {
+        if(this.data.burn > 0 && this.data.progress <= 0) {
         	this.data.burn --;
         }
         
