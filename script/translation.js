@@ -570,11 +570,11 @@ Translation.addTranslation("Blank Skull", {
 	ru: "Пустой череп",
 	zh: "空白头颅"
 });
-// Translation.addTranslation("Blank Record", {
-	// ko: "빈 음반",
-	// ru: "Пустая пластинка",
-	// zh: "空白唱片"
-// });
+Translation.addTranslation("Blank Record", {
+	ko: "빈 음반",
+	ru: "Пустая пластинка",
+	zh: "空白唱片"
+});
 // Translation.addTranslation("Filled", {
 	// ko: "가득참",
 	// ru: "Заполнено",
@@ -1164,31 +1164,31 @@ Translation.addTranslation("Fuel Capacity: %s", {
 	// ru: "Печи из эссенции",
 	// zh: "精华熔炉"
 // });
-// Translation.addTranslation("Inferium Furnace", {
-	// ko: "인퍼륨 화로",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Инфериумная печь" : "Инфериевая печь",
-	// zh: "下级精华炉"
-// });
-// Translation.addTranslation("Prudentium Furnace", {
-	// ko: "프루덴튬 화로",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Прудентиумная печь" : "Прудентиевая печь",
-	// zh: "初级精华炉"
-// });
-// Translation.addTranslation("Tertium Furnace", {
-	// ko: "터튬 화로",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Тертиумная печь" : "Тертиевая печь",
-	// zh: "中级精华炉"
-// });
-// Translation.addTranslation("Imperium Furnace", {
-	// ko: "임퍼륨 화로",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Империумная печь" : "Империевая печь",
-	// zh: "高级精华炉"
-// });
-// Translation.addTranslation("Supremium Furnace", {
-	// ko: "수프레뮴 화로",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Супремиумная печь" : "Супремиевая печь",
-	// zh: "终极精华炉"
-// });
+Translation.addTranslation("Inferium Furnace", {
+	ko: "인퍼륨 화로",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Инфериумная печь" : "Инфериевая печь",
+	zh: "下级精华炉"
+});
+Translation.addTranslation("Prudentium Furnace", {
+	ko: "프루덴튬 화로",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Прудентиумная печь" : "Прудентиевая печь",
+	zh: "初级精华炉"
+});
+Translation.addTranslation("Tertium Furnace", {
+	ko: "터튬 화로",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Тертиумная печь" : "Тертиевая печь",
+	zh: "中级精华炉"
+});
+Translation.addTranslation("Imperium Furnace", {
+	ko: "임퍼륨 화로",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Империумная печь" : "Империевая печь",
+	zh: "高级精华炉"
+});
+Translation.addTranslation("Supremium Furnace", {
+	ko: "수프레뮴 화로",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Супремиумная печь" : "Супремиевая печь",
+	zh: "终极精华炉"
+});
 
 
 // Translation.addTranslation("Essence Farmland", {
@@ -1265,16 +1265,16 @@ Translation.addTranslation("Mystical Fertilizer", {
 // });
 
 
-// Translation.addTranslation("Infusion Pedestal", {
-	// ko: "주입 받침대",
-	// ru: "Пьедестал наполнения",
-	// zh: "注魔基座"
-// });
-// Translation.addTranslation("Infusion Altar", {
-	// ko: "주입 제단",
-	// ru: "Алтарь наполнения",
-	// zh: "注魔祭坛"
-// });
+Translation.addTranslation("Infusion Pedestal", {
+	ko: "주입 받침대",
+	ru: "Пьедестал наполнения",
+	zh: "注魔基座"
+});
+Translation.addTranslation("Infusion Altar", {
+	ko: "주입 제단",
+	ru: "Алтарь наполнения",
+	zh: "注魔祭坛"
+});
 // Translation.addTranslation("Tinkering Table", {
 	// ko: "땜장이 작업대",
 	// ru: "Сборочный стол",
@@ -1297,4 +1297,7 @@ Translation.addTranslation("Master Infusion Crystal", {
 	ru: "Наполняющий кристалл Мастера",
 	zh: "终极注魔水晶"
 });
-Translation.addTranslation("Watering Can", { ko: "물뿌리개", ru: "Лейка", zh: "洒水壶" });
+//Translation.addTranslation("Watering Can", { 
+//  ko: "물뿌리개", 
+//  ru: "Лейка",
+//  zh: "洒水壶" });

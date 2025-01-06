@@ -19,6 +19,7 @@ souls/types.js
 souls/daggers.js
 souls/jars.js
 tiles/reprocessors.js
+tiles/furnaces.js
 integration/VeinMiner.js
 integration/IndustrialCraft.js
 footer.js

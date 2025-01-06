@@ -35,6 +35,15 @@ Recipes.addShaped({ id: ItemID.blank_skull, count: 1, data: 0 }, [
 ], ["@", VanillaBlockID.bone_block, 0, "#", ItemID.soul_dust, 0]);
 
 
+IDRegistry.genItemID("blank_record");
+Item.createItem("blank_record", "Blank Record", { name: "blank_record", meta: 0 });
+
+Recipes.addShaped({ id: ItemID.blank_record, count: 1, data: 0 }, [
+	"a#a",
+	"#@#",
+	"a#a"
+], ["@", VanillaItemID.iron_ingot, 0, "#", ItemID.skeleton_essence, 0, "a", ItemID.creeper_essence, 0]);
+
 IDRegistry.genItemID("infusion_crystal");
 Item.createItem("infusion_crystal", "Infusion Crystal", { name: "infusion_crystal", meta: 0 }, { stack: 1 });
 Item.setMaxDamage(ItemID.infusion_crystal, 1000);

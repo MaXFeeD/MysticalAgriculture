@@ -39,6 +39,7 @@ IMPORT("inherit");
 IMPORT("ToolLib");
 IMPORT("EnergyNet");
 IMPORT("StorageInterface");
+IMPORT("TileRender");
 
 const ENTITY_HOSTILE = [32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 43,
 	44, 45, 46, 47, 48, 49, 50, 52, 53, 54, 55, 57, 58, 59, 104, 105,
@@ -159,6 +160,13 @@ const MysticalRecipes = {
 		Recipes.addShapeless({ id: input, count: 4, data: 0 }, [
 			{ id: result, data: 0 }
 		]);
+	},
+	addFurnaceUpgrade(result, input, block, ingot, essence, level, data) {
+		Recipes.addShaped({ id: result, count: 1, data: level }, [
+			" e ",
+			"x#x",
+			" b "
+		], ["#", input, data, "b", block, 0, "x", ingot, 0, "e", essence, 0]);
 	}
 };
 
@@ -292,3 +300,5 @@ const LocalTileEntity = {
 		delete this.map[key];
 	}
 };
+
+let canTileBeReplaced = ModAPI.requireGlobal("canTileBeReplaced");

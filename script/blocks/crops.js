@@ -274,3 +274,42 @@ CropRegistry.register("slime", "Slime", CropTier.TWO, CropType.MOB, ItemID.slime
 
 
 
+IDRegistry.genBlockID("farmland_inferium");
+Block.createBlock("farmland_inferium", [
+ {
+	name: "farmland inferium ", 
+	texture: [["inferium_dirt", 0], 
+			  ["farmland_inferium_dry", 0], 
+			  ["inferium_dirt", 0], 
+			  ["inferium_dirt", 0], 
+			  ["inferium_dirt", 0], 
+			  ["inferium_dirt", 0]], 
+			  inCreative: true
+	}, 
+{	
+	name: "Farmland Inferium ", 
+	texture: [["inferium_dirt", 0], 
+			  ["farmland_inferium_wet", 0], 
+			  ["inferium_dirt", 0], 
+			  ["inferium_dirt", 0], 
+			  ["inferium_dirt", 0], 
+			  ["inferium_dirt", 0]], 
+			  inCreative: true
+	}
+]);
+
+Block.setShape(BlockID.farmland_inferium, 0, 0, 0, 1, 15/16, 1);
+
+function farmlandWeat(player, coords) {
+	let region = BlockSource.getDefaultForActor(player);
+    let truth = false
+    for(let xr = -4; xr <= 4; xr++) {
+        for (let zr = -4; zr <= 4; zr++) {
+            if(region.getBlock(coords.x + xr, coords.y - 1, coords.z + zr).id == VanillaBlockID.water || region.getBlock(coords.x + xr, coords.y - 1, coords.z + zr).id == VanillaBlockID.flowing_water) {
+                truth = true                                 
+                region.setBlock(coords.x, coords.y, coords.z, BlockID.farmland_inferium, 1);
+
+			}
+		}
+	}
+};

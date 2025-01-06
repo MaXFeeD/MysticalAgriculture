@@ -299,6 +299,11 @@ IDRegistry.genBlockID("infusion_pedestal");
 Block.createBlock("infusion_pedestal", [
 	{ name: "Infusion Pedestal", texture: [["stone", 0]], inCreative: true }
 ]);
+Recipes.addShaped({ id: BlockID.infusion_pedestal, count: 1, data: 0 }, [
+	" a ",
+	"#b#",
+	" b "
+], ["a", VanillaItemID.gold_ingot, 0, "#", VanillaBlockID.carpet, 14, "b", VanillaBlockID.stone, 0]);
 
 {
 	let renderer = new ICRender.Model();
@@ -380,6 +385,11 @@ IDRegistry.genBlockID("infusion_altar");
 Block.createBlock("infusion_altar", [
 	{ name: "Infusion Altar", texture: [[ "stone", 0 ]], inCreative: true }
 ]);
+Recipes.addShaped({ id: BlockID.infusion_altar, count: 1, data: 0 }, [
+	"a#a",
+	"#b#",
+	"bbb"
+], ["a", VanillaItemID.gold_ingot, 0, "#", VanillaBlockID.carpet, 14, "b", VanillaBlockID.stone, 0]);
 
 {
 	let renderer = new ICRender.Model();

@@ -6,9 +6,11 @@ IDRegistry.genItemID("inferium_essence");
 Item.createItem("inferium_essence", "Inferium Essence", { name: "inferium_essence", meta: 0 });
 
 Callback.addCallback("EntityDeath", function(entity) {
-	let coords = Entity.getPosition(entity);
-	let essences = Math.floor(Math.random() * 2);
-	World.drop(coords.x, coords.y, coords.z, ItemID.inferium_essence, essences);
+	if(Entity.getType(entity) !== EEntityType.PLAYER) {
+		let coords = Entity.getPosition(entity);
+		let essences = Math.floor(Math.random() * 2);
+		World.drop(coords.x, coords.y, coords.z, ItemID.inferium_essence, essences);
+	}
 });
 
 

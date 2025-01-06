@@ -92,11 +92,23 @@ Recipes.addShaped({ id: VanillaBlockID.stone, count: 16, data: 3 }, [
     " # "
 ], ["#", ItemID.stone_essence, 0, "~", ItemID.quartz_essence, 0]);
 Recipes.addShaped({ id: VanillaBlockID.stone, count: 16, data: 5 }, [
-    "  #",
+    " # ",
     "###",
-    " s "
-], ["#", ItemID.stone_essence, 0, "s", ItemID.quartz_essence, 0]);
+    " ~ "
+], ["#", ItemID.stone_essence, 0, "~", ItemID.quartz_essence, 0]);
 
 
 IDRegistry.genItemID("netherite_essence");
 Item.createItem("netherite_essence", "Netherite Essence", { name: "netherite_essence", meta: 0 });
+
+Recipes.addShaped({ id: VanillaItemID.netherite_ingot, count: 1, data: 0 }, [
+    "###",
+    "# #",
+    "###"
+], ["#", ItemID.netherite_essence, 0]);
+
+Recipes.addShaped({ id: VanillaItemID.music_disc_pigstep, count: 1, data: 0 }, [
+    "a# ",
+    "cb ",
+    "   "
+], ["c", ItemID.netherite_essence, 0, "a", ItemID.blank_record, 0, "#", ItemID.nether_essence, 0, "b", ItemID.gold_essence, 0]);
