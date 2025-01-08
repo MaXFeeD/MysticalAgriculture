@@ -1159,11 +1159,11 @@ Translation.addTranslation("Fuel Capacity: %s", {
 });
 
 
-// Translation.addTranslation("Essence Furnaces", {
-	// ko: "에센스 화로",
-	// ru: "Печи из эссенции",
-	// zh: "精华熔炉"
-// });
+//Translation.addTranslation("Essence Furnaces", {
+//	ko: "에센스 화로",
+//	ru: "Печи из эссенции",
+//	zh: "精华熔炉"
+//});
 Translation.addTranslation("Inferium Furnace", {
 	ko: "인퍼륨 화로",
 	ru: MysticalTranslation.RUSSIAN_UIM ? "Инфериумная печь" : "Инфериевая печь",
@@ -1191,36 +1191,36 @@ Translation.addTranslation("Supremium Furnace", {
 });
 
 
-// Translation.addTranslation("Essence Farmland", {
-	// ko: "에센스 경작지",
-	// ru: "Пашни из эссенции",
-	// zh: "精华耕地"
-// });
-// Translation.addTranslation("Inferium Farmland", {
-	// ko: "인퍼륨 경작지",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Инфериумная пашня" : "Инфериевая пашня",
-	// zh: "下级耕地"
-// });
-// Translation.addTranslation("Prudentium Farmland", {
-	// ko: "프루덴튬 경작지",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Прудентиумная пашня" : "Прудентиевая пашня",
-	// zh: "初级耕地"
-// });
-// Translation.addTranslation("Tertium Farmland", {
-	// ko: "터튬 경작지",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Тертиумная пашня" : "Тертиевая пашня",
-	// zh: "中级耕地"
-// });
-// Translation.addTranslation("Imperium Farmland", {
-	// ko: "임퍼륨 경작지",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Империумная пашня" : "Империевая пашня",
-	// zh: "高级耕地"
-// });
-// Translation.addTranslation("Supremium Farmland", {
-	// ko: "수프레뮴 경작지",
-	// ru: MysticalTranslation.RUSSIAN_UIM ? "Супремиумная пашня" : "Супремиевая пашня",
-	// zh: "终极耕地"
-// });
+Translation.addTranslation("Essence Farmland", {
+	ko: "에센스 경작지",
+	ru: "Пашни из эссенции",
+	zh: "精华耕地"
+});
+Translation.addTranslation("Inferium Farmland", {
+	ko: "인퍼륨 경작지",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Инфериумная пашня" : "Инфериевая пашня",
+	zh: "下级耕地"
+});
+Translation.addTranslation("Prudentium Farmland", {
+	ko: "프루덴튬 경작지",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Прудентиумная пашня" : "Прудентиевая пашня",
+	zh: "初级耕地"
+});
+Translation.addTranslation("Tertium Farmland", {
+	ko: "터튬 경작지",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Тертиумная пашня" : "Тертиевая пашня",
+	zh: "中级耕地"
+});
+Translation.addTranslation("Imperium Farmland", {
+	ko: "임퍼륨 경작지",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Империумная пашня" : "Империевая пашня",
+	zh: "高级耕地"
+});
+Translation.addTranslation("Supremium Farmland", {
+	ko: "수프레뮴 경작지",
+	ru: MysticalTranslation.RUSSIAN_UIM ? "Супремиумная пашня" : "Супремиевая пашня",
+	zh: "终极耕地"
+});
 
 
 Translation.addTranslation("Growth Accelerators", {

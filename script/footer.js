@@ -46,6 +46,14 @@ Item.addCreativeGroup("witherproof", translate("Witherproof Blocks"), [
 	BlockID.witherproof_glass
 ]);
 
+Item.addCreativeGroup("furnace", translate("Essence Farmland"), [
+	BlockID.inferium_farmland,
+	BlockID.prudentium_farmland,
+	BlockID.tertium_farmland,
+	BlockID.imperium_farmland,
+	BlockID.supremium_farmland
+]);
+
 Item.addCreativeGroup("reprocessor", translate("Seed Reprocessors"), [
 	BlockID.basic_reprocessor,
 	BlockID.inferium_reprocessor,

@@ -81,7 +81,7 @@ const BLOCK_STONE = Block.createSpecialType({
 	lightopacity: 15,
 	translucency: 0.0
 });
-var PLANT_BLOCKTYPE = Block.createSpecialType({
+const PLANT_BLOCKTYPE = Block.createSpecialType({
 	renderlayer: 3,
 	translucency: 0,
 	lightopacity: 0,
@@ -89,6 +89,14 @@ var PLANT_BLOCKTYPE = Block.createSpecialType({
 	rendertype: 1,
 	sound: "grass"
 }, "crop");
+const FARMLAND_BLOCKTYPE = Block.createSpecialType({
+	base: 60,
+	solid: true,
+	renderlayer: EBlockRenderLayer.BLEND,
+	lightopacity: 15,
+	translucency: 0.0,
+	sound: "gravel"
+});
 
 const translate = function(str, args) {
 	try {

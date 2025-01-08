@@ -14,6 +14,7 @@ minerals/tools.js
 minerals/armor.js
 blocks/ores.js
 blocks/decorations.js
+blocks/farmlands.js
 blocks/crops.js
 souls/types.js
 souls/daggers.js

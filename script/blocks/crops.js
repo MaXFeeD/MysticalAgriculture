@@ -1,4 +1,5 @@
 const CropTier = {
+	ELEMENTAL: "Elemental",
 	ONE: 1,
 	TWO: 2,
 	THREE: 3,
@@ -15,7 +16,7 @@ const CropRegistry = {
 	GROW_LIGHT_LEVEL: 9,
 
 	register(key, name, tier, type, essence, farmlands) {
-		farmlands || (farmlands = [VanillaBlockID.farmland]);
+		farmlands || (farmlands = [VanillaBlockID.farmland, BlockID.inferium_farmland, BlockID.prudentium_farmland, BlockID.tertium_farmland, BlockID.imperium_farmland, BlockID.supremium_farmland]);
 		this.createPlant(key, name, tier, type, 7, essence, farmlands);
 		this.createSeeds(key, name, tier, farmlands);
 	},
@@ -62,18 +63,79 @@ const CropRegistry = {
 				Entity.setCarriedItem(player, item.id, item.count - 1, item.data, item.extra);
 			}
 		});
-		Block.registerDropFunction(id, function(coords, id, data, diggingLevel) {
+		Block.registerDropFunction(id, function(coords, blockID, data, diggingLevel, enchant, item, region) {
+			let drop = [];
+		
 			if (data < growth) {
 				return [[ItemID[key + "_seeds"], 1, 0]];
 			}
-			let drop = [
-				[ItemID[key + "_seeds"], randomInt(1, 3), 0],
-				[essence, 1, 0]
-			];
+		
+			if (data == growth) {
+				const farmlandID = region.getBlock(coords.x, coords.y - 1, coords.z).id;
+				
+				let correctFarmland = false;
+				switch (tier) {
+					case CropTier.ELEMENTAL:
+						correctFarmland = (farmlandID == BlockID.inferium_farmland);
+						break;
+					case CropTier.ONE:
+						correctFarmland = (farmlandID == BlockID.inferium_farmland);
+						break;
+					case CropTier.TWO:
+						correctFarmland = (farmlandID == BlockID.prudentium_farmland);
+						break;
+					case CropTier.THREE:
+						correctFarmland = (farmlandID == BlockID.tertium_farmland);
+						break;
+					case CropTier.FOUR:
+						correctFarmland = (farmlandID == BlockID.imperium_farmland);
+						break;
+					case CropTier.FIVE:
+						correctFarmland = (farmlandID == BlockID.supremium_farmland);
+						break;
+				}
+		
+				if (correctFarmland) {
+					if (Math.random() <= 0.2) {
+						drop.push([ItemID[key + "_seeds"], 2, 0]); 
+					} else {
+						drop.push([ItemID[key + "_seeds"], 1, 0]); 
+					}
+				} else {
+					drop.push([ItemID[key + "_seeds"], 1, 0]);
+				}
+			}
+			
+			if (key == "inferium") {
+				switch (farmlandID) {
+					case BlockID.prudentium_farmland:
+						if (Math.random() <= 0.5) {
+							drop.push([essence, 1, 0]);
+						}
+						break;
+					case BlockID.tertium_farmland:
+						drop.push([essence, 1, 0]);
+						break;
+					case BlockID.imperium_farmland:
+						if (Math.random() <= 0.5) {
+							drop.push([essence, 2, 0]); 
+						} else {
+							drop.push([essence, 1, 0]);
+						}
+						break;
+					case BlockID.supremium_farmland:
+						drop.push([essence, 2, 0]);
+						break;
+				}
+			}	
+		
+			drop.push([essence, 1, 0]);
+		
 			if (Math.random() <= 0.1) {
 				drop.push([ItemID.fertilized_essence, 1, 0]);
 			}
-			return drop;
+		
+			return drop; 
 		});
 	},
 	createSeeds(key, name, tier, farmlands) {
@@ -81,7 +143,13 @@ const CropRegistry = {
 		Item.createItem(key + "_seeds", java.lang.String.format("%s Seeds", name), { name: key + "_seeds", meta: 0 });
 		Item.addCreativeGroup("seeds", translate("Resource Crops"), [ id ]);
 
-        let color = [Native.Color.YELLOW, Native.Color.GREEN, Native.Color.GOLD, Native.Color.BLUE, Native.Color.RED][(tier - 1) % 5];
+        let color;
+		if(tier == CropTier.ELEMENTAL) {
+			color = Native.Color.YELLOW;
+		} else {
+			color = [Native.Color.YELLOW, Native.Color.GREEN, Native.Color.GOLD, Native.Color.AQUA, Native.Color.RED][(tier - 1) % 5];
+		}
+
         Item.registerNameOverrideFunction(id, function(item, translation, name) {
             return translation + "\n" + Native.Color.GRAY + translate("Tier: %s", color + tier);
         });
@@ -116,13 +184,13 @@ InfusionRecipeRegistry.registerRecipe(ItemID.dirt_seeds, ItemID.crafting_seed_ba
 	{ id: ItemID.inferium_essence, count: 4 }
 	]);
 
-CropRegistry.register("air", "Air", CropTier.ONE, CropType.RESOURCE, ItemID.air_essence);
+CropRegistry.register("air", "Air", CropTier.ELEMENTAL, CropType.RESOURCE, ItemID.air_essence);
 InfusionRecipeRegistry.registerRecipe(ItemID.air_seeds, ItemID.crafting_seed_base, [
 	{ id: ItemID.air_agglomeratio, count: 4 },
 	{ id: ItemID.inferium_essence, count: 4 }
 	]);
 
-CropRegistry.register("earth", "Earth", CropTier.ONE, CropType.RESOURCE, ItemID.earth_essence);
+CropRegistry.register("earth", "Earth", CropTier.ELEMENTAL, CropType.RESOURCE, ItemID.earth_essence);
 InfusionRecipeRegistry.registerRecipe(ItemID.earth_seeds, ItemID.crafting_seed_base, [
 	{ id: ItemID.earth_agglomeratio, count: 4 },
 	{ id: ItemID.inferium_essence, count: 4 }
@@ -211,7 +279,7 @@ InfusionRecipeRegistry.registerRecipe(ItemID.glowstone_seeds, ItemID.crafting_se
 	{ id: ItemID.tertium_essence, count: 4 }
 	]);
 
-CropRegistry.register("fire", "Fire", CropTier.ONE, CropType.RESOURCE, ItemID.fire_essence);
+CropRegistry.register("fire", "Fire", CropTier.ELEMENTAL, CropType.RESOURCE, ItemID.fire_essence);
 InfusionRecipeRegistry.registerRecipe(ItemID.fire_seeds, ItemID.crafting_seed_base, [
 	{ id: ItemID.fire_agglomeratio, count: 4 },
 	{ id: ItemID.inferium_essence, count: 4 }
@@ -223,7 +291,7 @@ InfusionRecipeRegistry.registerRecipe(ItemID.ice_seeds, ItemID.crafting_seed_bas
 	{ id: ItemID.inferium_essence, count: 4 }
 	]);
 
-CropRegistry.register("water", "Water", CropTier.ONE, CropType.RESOURCE, ItemID.water_essence);
+CropRegistry.register("water", "Water", CropTier.ELEMENTAL, CropType.RESOURCE, ItemID.water_essence);
 InfusionRecipeRegistry.registerRecipe(ItemID.water_seeds, ItemID.crafting_seed_base, [
 	{ id: ItemID.water_agglomeratio, count: 4 },
 	{ id: ItemID.inferium_essence, count: 4 }
@@ -271,45 +339,3 @@ CropRegistry.register("sheep", "Sheep", CropTier.TWO, CropType.MOB, ItemID.sheep
 CropRegistry.register("spider", "Spider", CropTier.THREE, CropType.MOB, ItemID.spider_essence);
 CropRegistry.register("squid", "Squid", CropTier.TWO, CropType.MOB, ItemID.squid_essence);
 CropRegistry.register("slime", "Slime", CropTier.TWO, CropType.MOB, ItemID.slime_essence);
-
-
-
-IDRegistry.genBlockID("farmland_inferium");
-Block.createBlock("farmland_inferium", [
- {
-	name: "farmland inferium ", 
-	texture: [["inferium_dirt", 0], 
-			  ["farmland_inferium_dry", 0], 
-			  ["inferium_dirt", 0], 
-			  ["inferium_dirt", 0], 
-			  ["inferium_dirt", 0], 
-			  ["inferium_dirt", 0]], 
-			  inCreative: true
-	}, 
-{	
-	name: "Farmland Inferium ", 
-	texture: [["inferium_dirt", 0], 
-			  ["farmland_inferium_wet", 0], 
-			  ["inferium_dirt", 0], 
-			  ["inferium_dirt", 0], 
-			  ["inferium_dirt", 0], 
-			  ["inferium_dirt", 0]], 
-			  inCreative: true
-	}
-]);
-
-Block.setShape(BlockID.farmland_inferium, 0, 0, 0, 1, 15/16, 1);
-
-function farmlandWeat(player, coords) {
-	let region = BlockSource.getDefaultForActor(player);
-    let truth = false
-    for(let xr = -4; xr <= 4; xr++) {
-        for (let zr = -4; zr <= 4; zr++) {
-            if(region.getBlock(coords.x + xr, coords.y - 1, coords.z + zr).id == VanillaBlockID.water || region.getBlock(coords.x + xr, coords.y - 1, coords.z + zr).id == VanillaBlockID.flowing_water) {
-                truth = true                                 
-                region.setBlock(coords.x, coords.y, coords.z, BlockID.farmland_inferium, 1);
-
-			}
-		}
-	}
-};
