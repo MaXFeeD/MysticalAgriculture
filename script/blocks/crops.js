@@ -221,7 +221,7 @@ InfusionRecipeRegistry.registerRecipe(ItemID.stone_seeds, ItemID.crafting_seed_b
 
 CropRegistry.register("coal", "Coal", CropTier.TWO, CropType.RESOURCE, ItemID.coal_essence);
 InfusionRecipeRegistry.registerRecipe(ItemID.coal_seeds, ItemID.crafting_seed_base, [
-	{ id: VanillaBlockID.coal, count: 4 },
+	{ id: VanillaItemID.coal, count: 4 },
 	{ id: ItemID.prudentium_essence, count: 4 }
 	]);
 

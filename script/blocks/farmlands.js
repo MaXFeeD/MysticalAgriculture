@@ -15,19 +15,19 @@ function CreateEssenceFarmland(id, tier, essence, upgrade) {
     Block.setRandomTickCallback(id, function(x, y, z, id, data, region) {
         let truth = false;
     
-        for (let xr = -4; xr <= 4; xr++) {
-            for (let zr = -4; zr <= 4; zr++) {
-                let blockId = region.getBlock(x + xr, y, z + zr).id;
-                if (blockId == VanillaBlockID.water || blockId == VanillaBlockID.flowing_water) {
-                    truth = true;
-                    break; 
-                }
-            }
-            if (truth) break;
-        }
-    
-        if (region.getRainLevel() == 1 || region.getRainLevel() == 2) {
+        if (region.getRainLevel() > 0) {
             truth = true;
+        } else {
+            for (let xr = -4; xr <= 4; xr++) {
+                for (let zr = -4; zr <= 4; zr++) {
+                    let blockId = region.getBlock(x + xr, y, z + zr).id;
+                    if (blockId == VanillaBlockID.water || blockId == VanillaBlockID.flowing_water) {
+                        truth = true;
+                        break; 
+                    }
+                }
+                if (truth) break;
+            }
         }
     
         region.setBlock(x, y, z, id, truth ? 1 : 0);

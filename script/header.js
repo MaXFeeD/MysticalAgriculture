@@ -93,8 +93,6 @@ const FARMLAND_BLOCKTYPE = Block.createSpecialType({
 	base: 60,
 	solid: true,
 	renderlayer: EBlockRenderLayer.BLEND,
-	lightopacity: 15,
-	translucency: 0.0,
 	sound: "gravel"
 });
 

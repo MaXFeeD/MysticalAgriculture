@@ -79,15 +79,15 @@ ModAPI.addAPICallback("ICore", function(api) {
 		{ id: ItemID.imperium_essence, count: 4 }
 	]);
 
-	CropRegistry.register("lead", "Lead", CropTier.FOUR, CropType.RESOURCE, ItemID.lead_essence);
+	CropRegistry.register("lead", "Lead", CropTier.THREE, CropType.RESOURCE, ItemID.lead_essence);
 	InfusionRecipeRegistry.registerRecipe(ItemID.lead_seeds, ItemID.crafting_seed_base, [
 		{ id: ItemID.ingotLead, count: 4 },
-		{ id: ItemID.imperium_essence, count: 4 }
+		{ id: ItemID.tertium_essence, count: 4 }
 	]);
 
-	CropRegistry.register("silver", "Silver", CropTier.FOUR, CropType.RESOURCE, ItemID.silver_essence);
+	CropRegistry.register("silver", "Silver", CropTier.THREE, CropType.RESOURCE, ItemID.silver_essence);
 	InfusionRecipeRegistry.registerRecipe(ItemID.silver_seeds, ItemID.crafting_seed_base, [
 		{ id: ItemID.ingotSilver, count: 4 },
-		{ id: ItemID.imperium_essence, count: 4 }
+		{ id: ItemID.tertium_essence, count: 4 }
 	]);
 });
